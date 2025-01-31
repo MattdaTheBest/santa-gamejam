@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bigatvdyqln48"]
+
+[ext_resource type="Texture2D" uid="uid://d1q52yweaojaj" path="res://sprites/jaffa.png" id="1_0on7q"]
+[ext_resource type="Script" path="res://scripts/jaffa.gd" id="1_056e5"]
+[ext_resource type="Texture2D" uid="uid://blo1wjhvd3wql" path="res://sprites/moneyShadow.png" id="3_mcqjc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_00qct"]
+radius = 1.0
+
+[node name="jaffa" type="RigidBody2D" groups=["jaffa"]]
+collision_layer = 16
+collision_mask = 16
+gravity_scale = 0.0
+linear_damp = 5.0
+script = ExtResource("1_056e5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_00qct")
+
+[node name="jaffactual" type="Sprite2D" parent="."]
+texture = ExtResource("1_0on7q")
+
+[node name="jaffaShadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.607843)
+scale = Vector2(0.3, 0.75)
+texture = ExtResource("3_mcqjc")
+offset = Vector2(0, 3.5)

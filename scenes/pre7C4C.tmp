@@ -1,0 +1,130 @@
+[gd_scene load_steps=16 format=3 uid="uid://j1l0ctfnmr85"]
+
+[ext_resource type="Script" path="res://scripts/present.gd" id="1_w7his"]
+[ext_resource type="Texture2D" uid="uid://bfbod4c35xu3i" path="res://sprites/present.png" id="2_stovw"]
+[ext_resource type="Texture2D" uid="uid://b5jlwdy00roo2" path="res://sprites/presentShadow.png" id="3_3ug5x"]
+
+[sub_resource type="Animation" id="Animation_3lsti"]
+resource_name = "float"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -2), Vector2(0, 0), Vector2(0, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wkb12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1514"]
+_data = {
+"RESET": SubResource("Animation_wkb12"),
+"float": SubResource("Animation_3lsti")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxvxv"]
+atlas = ExtResource("2_stovw")
+region = Rect2(0, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kklu"]
+atlas = ExtResource("2_stovw")
+region = Rect2(7, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7xfs"]
+atlas = ExtResource("2_stovw")
+region = Rect2(14, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vej3g"]
+atlas = ExtResource("2_stovw")
+region = Rect2(21, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78jt4"]
+atlas = ExtResource("2_stovw")
+region = Rect2(28, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6uqp"]
+atlas = ExtResource("2_stovw")
+region = Rect2(35, 0, 7, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yaxkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxvxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kklu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7xfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vej3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78jt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6uqp")
+}],
+"loop": false,
+"name": &"color",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ooua3"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a3sym"]
+radius = 2.23607
+
+[node name="Present" type="CharacterBody2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_w7his")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../presentactual")
+libraries = {
+"": SubResource("AnimationLibrary_y1514")
+}
+autoplay = "float"
+
+[node name="presentactual" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_yaxkx")
+animation = &"color"
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+texture = ExtResource("3_3ug5x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ooua3")
+
+[node name="pickupArea" type="Area2D" parent="." groups=["present"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupArea"]
+shape = SubResource("CircleShape2D_a3sym")

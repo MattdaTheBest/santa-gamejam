@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://qjan4n8ks8gk"]
+
+[ext_resource type="Script" path="res://scripts/person.gd" id="1_u7yjj"]
+[ext_resource type="Texture2D" uid="uid://be2qhutp5whrv" path="res://sprites/dude.png" id="2_4ylpv"]
+[ext_resource type="Texture2D" uid="uid://byl13p5dug3oi" path="res://sprites/runPerson.png" id="3_qwxe4"]
+[ext_resource type="Texture2D" uid="uid://b5jlwdy00roo2" path="res://sprites/presentShadow.png" id="4_o2s0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6qnl"]
+atlas = ExtResource("2_4ylpv")
+region = Rect2(0, 0, 7, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6qdt"]
+atlas = ExtResource("3_qwxe4")
+region = Rect2(0, 0, 7, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88e44"]
+atlas = ExtResource("3_qwxe4")
+region = Rect2(7, 0, 7, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n12gm"]
+atlas = ExtResource("3_qwxe4")
+region = Rect2(14, 0, 7, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qipf"]
+atlas = ExtResource("3_qwxe4")
+region = Rect2(21, 0, 7, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ab12a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6qnl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6qdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88e44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n12gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qipf")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="person" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_u7yjj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ab12a")
+animation = &"run"
+autoplay = "run"
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.607843)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(0, 6)
+texture = ExtResource("4_o2s0n")

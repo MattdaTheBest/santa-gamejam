@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b056kdeqmturq"]
+
+[ext_resource type="Script" path="res://scripts/cash_spawner.gd" id="1_bf7g1"]
+
+[node name="cashSpawner" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_bf7g1")

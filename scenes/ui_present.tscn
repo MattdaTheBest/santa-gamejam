@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://b35tpa6kcl6pa"]
+
+[ext_resource type="Script" path="res://scenes/ui_present.gd" id="1_204hs"]
+[ext_resource type="Texture2D" uid="uid://xlbx5nveo0xt" path="res://sprites/icon.svg" id="1_lx0fj"]
+[ext_resource type="Texture2D" uid="uid://8e27wt66qq13" path="res://sprites/uiPresent.png" id="3_38wjv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sul4j"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8nsa"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10jsr"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqjd3"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl645"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef61q"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2o18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sul4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8nsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10jsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqjd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl645")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef61q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="uiPresent" type="Control"]
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_204hs")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Present" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lx0fj")
+region_rect = Rect2(0, 0, 7, 7)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("3_38wjv")
+
+[node name="present" type="AnimatedSprite2D" parent="."]
+top_level = true
+position = Vector2(576, 324)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_f2o18")

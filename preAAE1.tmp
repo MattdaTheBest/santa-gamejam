@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://j1l0ctfnmr85"]
+
+[ext_resource type="Script" path="res://present.gd" id="1_w7his"]
+[ext_resource type="Texture2D" uid="uid://xlbx5nveo0xt" path="res://icon.svg" id="2_emjwg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ooua3"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a3sym"]
+radius = 29.0
+
+[node name="Present" type="CharacterBody2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_w7his")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_emjwg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ooua3")
+
+[node name="pickupArea" type="Area2D" parent="." groups=["present"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupArea"]
+shape = SubResource("CircleShape2D_a3sym")

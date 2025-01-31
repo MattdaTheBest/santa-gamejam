@@ -1,0 +1,162 @@
+[gd_scene load_steps=21 format=3 uid="uid://4cde18rv0e0s"]
+
+[ext_resource type="Script" path="res://player_test.gd" id="1_q1h0g"]
+[ext_resource type="Texture2D" uid="uid://dxgqfy50s1hj6" path="res://sprites/playerSpriteSheet.png" id="2_4q5yl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mwqws"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odylh"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqvl6"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpjux"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(32, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjd7n"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(48, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lebce"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(0, 18, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m82lu"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(16, 18, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1br57"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(32, 18, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okhj3"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(48, 18, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyhrv"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(0, 36, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqpe0"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(16, 36, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16sy8"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(32, 36, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lrb4"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(48, 36, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecip1"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(0, 54, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pnms"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(16, 54, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6idl4"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(32, 54, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qpg3"]
+atlas = ExtResource("2_4q5yl")
+region = Rect2(48, 54, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6qk6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odylh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqvl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpjux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjd7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lebce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m82lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1br57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okhj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyhrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqpe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16sy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lrb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecip1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pnms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6idl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qpg3")
+}],
+"loop": true,
+"name": &"angles",
+"speed": 5.0
+}]
+
+[node name="playerTest" type="CharacterBody2D"]
+script = ExtResource("1_q1h0g")
+max_speed = null
+acceleration = null
+deceleration = null
+drift_power = null
+drift_control = null
+rotation_speed = null
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mwqws")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d6qk6")
+animation = &"angles"
+
+[node name="shotPower" type="ProgressBar" parent="."]
+offset_left = -8.0
+offset_top = 5.0
+offset_right = 8.0
+offset_bottom = 9.0
+show_percentage = false
+
+[node name="Center" type="Marker2D" parent="."]
+
+[node name="Offset" type="Marker2D" parent="Center"]
+position = Vector2(2, 0)
