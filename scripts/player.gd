@@ -7,7 +7,7 @@ var currentSpeed = 0
 var maxSpeed = 100
 const SlowSPEED = 50
 const maxVelocity = 50
-@export var  maxTrailSize : int = 15
+@export var  maxTrailSize : int = 5
 
 var playerMoney : int = 0
 var playerJaffas : int = 0
@@ -99,20 +99,19 @@ func _physics_process(delta: float) -> void:#
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("present") and not presentList.has(area.get_parent()) and presentList.size() < maxTrailSize:
+		var present = area.get_parent()
 		if presentList.size() == 0:
-			var present = area.get_parent()
 			present.setModeTrailandTarget(self)
-		else:
-			var present = area.get_parent()
+		else:	
 			present.setModeTrailandTarget(presentList[presentList.size() - 1])
 		
-		presentList.append(area.get_parent())
-		player_ui.addPresent(area.get_parent().presentactual.frame, maxTrailSize - presentList.find(area.get_parent()))
+		presentList.append(present)
+		player_ui.addPresent(present.presentactual.frame, maxTrailSize - presentList.find(present), present,present.presentType )
 		
 func shootPresent(power):
 	var present = presentList[0]
 	presentList.remove_at(0)
-	player_ui.call_deferred("removePresent")
+	player_ui.call_deferred("removePresent", present)
 	
 	for i in presentList.size():
 		if i == 0:
@@ -142,6 +141,7 @@ func rotatePresentsRight():
 			else:
 				if i + 1 <= presentList.size() - 1:
 					presentList[i] = presentList[i + 1]
+	player_ui.sortPresents()
 				
 func rotatePresentsLeft():
 	if presentList.size() > 1:
@@ -160,6 +160,7 @@ func rotatePresentsLeft():
 			else:
 				if index - 1 >= 0:
 					presentList[index] = presentList[index - 1]
+	player_ui.sortPresents()
 
 func updateSpriteAngle(): #16 frames
 	currRotation = fmod(currRotation + 360, 360)

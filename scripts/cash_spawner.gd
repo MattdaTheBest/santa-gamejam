@@ -14,8 +14,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("e"):
-		spawnCash(5, 12)
+	#if Input.is_action_just_pressed("e"):
+		#spawnCash(5, 12)
 	pass
 	
 func spawnCash(low, high):

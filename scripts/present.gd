@@ -15,7 +15,7 @@ var direction : Vector2
 @onready var shoot_particles: GPUParticles2D = $shootParticles
 @onready var allowable_gap = 25
 @onready var follow_stop_delay: Timer = $follow_stop_delay
-
+var presentType = "Basic"
 var tween
 
 # Called when the node enters the scene tree for the first time.
