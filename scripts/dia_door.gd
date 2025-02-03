@@ -19,5 +19,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		get_node("/root/world").findDoors()
 		body.call_deferred("free")
 		area_2d.set_deferred("monitoring", false)
-		cash_spawner.call_deferred("spawnCash", 10,20)
+		cash_spawner.call_deferred("spawnCash", body.presentMoneyReward)
 		set_frame_and_progress(2,1)

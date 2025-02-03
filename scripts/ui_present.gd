@@ -7,7 +7,7 @@ var presentActual  = null
 var index : int 
 var appearDone : bool = false
 var presentType : String
-@onready var label: Label = $Label
+
 
 #@onready var present: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -22,13 +22,10 @@ func _process(delta: float) -> void:
 	if not beingRemoved:
 		present.global_position = present.global_position.lerp(global_position, 2 * delta)
 	present.z_index = z_index
-	label.z_index = present.z_index
 	if index == 0 and appearDone:
 		present.scale = present.scale.lerp(Vector2(6,6), 5 * delta)
-		label.visible = true
 	elif appearDone:
 		present.scale = Vector2(4,4)
-		label.visible = false
 
 func setColor(color):
 	present.set_frame_and_progress(color, 1)
@@ -49,7 +46,6 @@ func rotateSelf():
 	
 func appear(type):
 	presentType = type
-	label.text = str(presentType) + " Present"
 	present.global_position = global_position	
 	set_h_size_flags(Control.SIZE_FILL)
 	set_v_size_flags(Control.SIZE_SHRINK_CENTER)

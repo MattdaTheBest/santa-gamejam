@@ -18,11 +18,10 @@ func _process(delta: float) -> void:
 		#spawnCash(5, 12)
 	pass
 	
-func spawnCash(low, high):
-	var amount = randi_range(low, high)
-	var stacks = int(amount/5)
-	var loose = amount - (stacks*5)
-	var jaffa = randi_range(0, jaffaChance)/jaffaChance
+func spawnCash(amount):
+	var stacks = int(amount[0]/5)
+	var loose = amount[0] - (stacks*5)
+	var jaffa = amount[1]
 	
 	for s in stacks:
 		var stackedMoney = STACKED_CASH.instantiate()

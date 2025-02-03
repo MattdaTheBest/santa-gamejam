@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://fp1jccghjj33"]
+[gd_scene load_steps=19 format=4 uid="uid://fp1jccghjj33"]
 
 [ext_resource type="Script" path="res://scripts/world_test.gd" id="1_mskqx"]
 [ext_resource type="PackedScene" uid="uid://bdxjddcw143ot" path="res://scenes/player.tscn" id="2_7xs0n"]
@@ -10,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://y3frjc5br7ie" path="res://scenes/basic_building_2.tscn" id="6_i7wux"]
 [ext_resource type="PackedScene" uid="uid://ug2f0iv3jrl2" path="res://scenes/dia_door.tscn" id="7_g88p4"]
 [ext_resource type="PackedScene" uid="uid://dju6t1b4y10ok" path="res://scenes/dia_door_l.tscn" id="8_qw33r"]
+[ext_resource type="PackedScene" uid="uid://jic670w2mg03" path="res://scenes/brick_building_1.tscn" id="10_u64ne"]
+
+[sub_resource type="Environment" id="Environment_sveyw"]
+background_mode = 3
+tonemap_exposure = 0.71
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7qf4"]
 texture = ExtResource("2_s4etb")
@@ -66,12 +71,16 @@ scenes/2/scene = ExtResource("6_i7wux")
 scenes/3/scene = ExtResource("6_5rokf")
 scenes/4/scene = ExtResource("7_g88p4")
 scenes/5/scene = ExtResource("8_qw33r")
+scenes/6/scene = ExtResource("10_u64ne")
 
 [sub_resource type="TileSet" id="TileSet_820yl"]
 sources/0 = SubResource("TileSetScenesCollectionSource_hvu70")
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_mskqx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sveyw")
 
 [node name="playerUI" parent="." instance=ExtResource("2_84jap")]
 
@@ -94,7 +103,7 @@ tile_set = SubResource("TileSet_6jkef")
 
 [node name="buildings" type="TileMapLayer" parent="ysortedOBJ"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAADAAUAAAAAAAAAAQAIAAUAAAAAAAAAAgD9/woAAAAAAAAAAQAOAAsAAAAAAAAAAQADABEAAAAAAAAAAQAJAAcAAAAAAAAABAAHAAcAAAAAAAAAAwACAAgAAAAAAAAAAwD8/w0AAAAAAAAAAwACABQAAAAAAAAAAwANAA4AAAAAAAAAAwD8/woAAAAAAAAAAwACAAUAAAAAAAAAAwAMAAsAAAAAAAAAAwAPAAsAAAAAAAAAAwAEABEAAAAAAAAAAwACABEAAAAAAAAAAwAHAAUAAAAAAAAAAwAGAAcAAAAAAAAABQD6/xEAAAAAAAAAAgAOABQAAAAAAAAAAgAPAAUAAAAAAAAAAgAIABIAAAAAAAAAAgD8/xYAAAAAAAAAAQD0/woAAAAAAAAAAQD7/wUAAAAAAAAAAQD6/wgAAAAAAAAAAwDz/w0AAAAAAAAAAwD0/w0AAAAAAAAAAwD7/xkAAAAAAAAAAwD5/xMAAAAAAAAAAwAIABQAAAAAAAAAAwANABYAAAAAAAAAAwAPAAcAAAAAAAAAAwAQAAcAAAAAAAAABAAPABYAAAAAAAAABAD4/xMAAAAAAAAABQAGABQAAAAAAAAABQD6/wUAAAAAAAAAAwDy/woAAAAAAAAAAwANABQAAAAAAAAAAwAHABIAAAAAAAAAAwD6/xYAAAAAAAAAAwAOAAUAAAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAADAAUAAAAAAAAAAQAIAAUAAAAAAAAAAgD9/woAAAAAAAAAAQAOAAsAAAAAAAAAAQADABEAAAAAAAAAAQAJAAcAAAAAAAAABAAHAAcAAAAAAAAAAwACAAgAAAAAAAAAAwD8/w0AAAAAAAAAAwACABQAAAAAAAAAAwANAA4AAAAAAAAAAwD8/woAAAAAAAAAAwACAAUAAAAAAAAAAwAMAAsAAAAAAAAAAwAPAAsAAAAAAAAAAwAEABEAAAAAAAAAAwACABEAAAAAAAAAAwAHAAUAAAAAAAAAAwAGAAcAAAAAAAAABQD6/xEAAAAAAAAAAgAOABQAAAAAAAAAAgAPAAUAAAAAAAAAAgAIABIAAAAAAAAAAgD8/xYAAAAAAAAAAQD0/woAAAAAAAAAAQD7/wUAAAAAAAAAAQD6/wgAAAAAAAAAAwDz/w0AAAAAAAAAAwD0/w0AAAAAAAAAAwD7/xkAAAAAAAAAAwD5/xMAAAAAAAAAAwAIABQAAAAAAAAAAwANABYAAAAAAAAAAwAPAAcAAAAAAAAAAwAQAAcAAAAAAAAABAAPABYAAAAAAAAABAD4/xMAAAAAAAAABQAGABQAAAAAAAAABQD6/wUAAAAAAAAAAwDy/woAAAAAAAAAAwANABQAAAAAAAAAAwAHABIAAAAAAAAAAwD6/xYAAAAAAAAAAwAOAAUAAAAAAAAAAwAXAAcAAAAAAAAABgA=")
 tile_set = SubResource("TileSet_820yl")
 
 [node name="presents" type="Node2D" parent="ysortedOBJ"]

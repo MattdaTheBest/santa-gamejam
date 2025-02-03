@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://j1l0ctfnmr85"]
+[gd_scene load_steps=21 format=3 uid="uid://j1l0ctfnmr85"]
 
 [ext_resource type="Script" path="res://scripts/present.gd" id="1_w7his"]
 [ext_resource type="Texture2D" uid="uid://bfbod4c35xu3i" path="res://sprites/present.png" id="2_stovw"]
@@ -106,6 +106,14 @@ region = Rect2(28, 0, 7, 7)
 atlas = ExtResource("2_stovw")
 region = Rect2(35, 0, 7, 7)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vljk1"]
+atlas = ExtResource("2_stovw")
+region = Rect2(42, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftsxd"]
+atlas = ExtResource("2_stovw")
+region = Rect2(49, 0, 7, 7)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_yaxkx"]
 animations = [{
 "frames": [{
@@ -126,6 +134,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o6uqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vljk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftsxd")
 }],
 "loop": false,
 "name": &"color",

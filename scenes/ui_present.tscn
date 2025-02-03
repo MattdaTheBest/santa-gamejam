@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b35tpa6kcl6pa"]
+[gd_scene load_steps=12 format=3 uid="uid://b35tpa6kcl6pa"]
 
 [ext_resource type="Script" path="res://scripts/ui_present.gd" id="1_204hs"]
 [ext_resource type="Texture2D" uid="uid://8e27wt66qq13" path="res://sprites/uiPresent.png" id="3_38wjv"]
@@ -27,6 +27,14 @@ region = Rect2(64, 0, 16, 16)
 atlas = ExtResource("3_38wjv")
 region = Rect2(80, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb0ik"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22lxt"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(112, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_f2o18"]
 animations = [{
 "frames": [{
@@ -47,6 +55,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ef61q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb0ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22lxt")
 }],
 "loop": true,
 "name": &"default",
@@ -67,16 +81,8 @@ script = ExtResource("1_204hs")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[node name="Label" type="Label" parent="."]
-offset_left = -45.0
-offset_top = 27.0
-offset_right = 49.0
-offset_bottom = 50.0
-text = "presenttype
-"
-
 [node name="present" type="AnimatedSprite2D" parent="."]
 top_level = true
 position = Vector2(576, 324)
-scale = Vector2(1e-05, 1e-05)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_f2o18")

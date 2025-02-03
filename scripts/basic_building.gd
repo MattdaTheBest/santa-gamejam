@@ -1,10 +1,9 @@
 extends Node2D
 
-@onready var fade_area: Area2D = $fadeArea
+
 @onready var front: TileMapLayer = $Front
-@onready var front_door: TileMapLayer = $FrontDoor
 @onready var back: TileMapLayer = $Back
-@onready var back_door: TileMapLayer = $BackDoor
+@onready var center: Marker2D = $Center
 var above : bool = false
 var player : CharacterBody2D
 
@@ -18,7 +17,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not above and player.global_position.y < global_position.y:
+	if not above and player.global_position.y < center.global_position.y:
 		above = true
 		fadeOut()
 	elif above:
@@ -27,15 +26,6 @@ func _process(delta: float) -> void:
 
 func getPlayer():
 	player = get_tree().get_nodes_in_group("player")[0]
-
-func _on_fade_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		fadeOut()
-
-
-func _on_fade_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		fadeIn()
 		
 func fadeOut():
 	if tween:

@@ -7,7 +7,8 @@ var currentSpeed = 0
 var maxSpeed = 100
 const SlowSPEED = 50
 const maxVelocity = 50
-@export var  maxTrailSize : int = 5
+@export var  maxTrailSize : int = 7
+
 
 var playerMoney : int = 0
 var playerJaffas : int = 0

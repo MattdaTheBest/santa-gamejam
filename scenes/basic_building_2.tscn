@@ -173,5 +173,7 @@ visible = false
 position = Vector2(0, -32.5)
 shape = SubResource("RectangleShape2D_wj6jb")
 
+[node name="Center" type="Marker2D" parent="."]
+
 [connection signal="body_entered" from="fadeArea" to="." method="_on_fade_area_body_entered"]
 [connection signal="body_exited" from="fadeArea" to="." method="_on_fade_area_body_exited"]

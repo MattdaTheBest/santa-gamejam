@@ -15,15 +15,22 @@ var direction : Vector2
 @onready var shoot_particles: GPUParticles2D = $shootParticles
 @onready var allowable_gap = 25
 @onready var follow_stop_delay: Timer = $follow_stop_delay
-var presentType = "Basic"
+var presentType = "Unset"
 var tween
+
+#Unique Present Variables
+var presentMass : int = 0 
+var presentMoneyReward : Array = [randi_range(5, 10), 0]
+
+
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	presentactual.set_frame_and_progress(randi_range(0,5),1)
-	animation_player.advance(randf_range(0,2.5))
-
+	spawnPresent()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if currMode == modes.trail:
@@ -34,12 +41,35 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.bounce(collision_info.get_normal())/2
 			presentactual.rotation = -presentactual.rotation
 		
-		velocity = velocity.move_toward(Vector2(0,0), slowSpeed * delta)
+		velocity = velocity.move_toward(Vector2(0,0), (slowSpeed + presentMass) * delta)
 		
 		if velocity == Vector2(0,0):
 			setModePickup()	
 
 	move_and_slide()
+
+func spawnPresent():
+	#current odds of a special present = 1/16
+	var present_type = randi_range(1,16)
+	if present_type != 16:
+		presentactual.set_frame_and_progress(randi_range(0,5),1)
+		presentType = "Basic"
+	elif present_type == 16:
+		present_type = randi_range(1,2)
+		if present_type == 1:
+			presentactual.set_frame_and_progress(6,1)
+			presentType = "Gold"
+			
+			presentMass = 50
+			presentMoneyReward = [randi_range(10, 20),0]
+		elif present_type == 2:
+			presentactual.set_frame_and_progress(7,1)
+			presentType = "Jaffa"
+			
+			presentMass = 0
+			presentMoneyReward = [randi_range(0, 0), randi_range(2,3)]
+
+	animation_player.advance(randf_range(0,2.5))
 
 func setModePickup():
 	remove_collision_exception_with(target)
@@ -109,7 +139,6 @@ func followTarget(delta):
 		
 		velocity = velocity.lerp(Vector2(0,0), followSpeed/4 * delta)
 	
-
 func fixRotation():
 	
 	if tween:
