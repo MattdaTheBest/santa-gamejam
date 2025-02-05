@@ -1,16 +1,19 @@
-[gd_scene load_steps=19 format=4 uid="uid://fp1jccghjj33"]
+[gd_scene load_steps=22 format=4 uid="uid://fp1jccghjj33"]
 
 [ext_resource type="Script" path="res://scripts/world_test.gd" id="1_mskqx"]
 [ext_resource type="PackedScene" uid="uid://bdxjddcw143ot" path="res://scenes/player.tscn" id="2_7xs0n"]
 [ext_resource type="PackedScene" uid="uid://dk16b1riqhi1e" path="res://scenes/player_ui.tscn" id="2_84jap"]
 [ext_resource type="Texture2D" uid="uid://2gtg8vtktdi5" path="res://sprites/basicBlock.png" id="2_s4etb"]
 [ext_resource type="PackedScene" uid="uid://j1l0ctfnmr85" path="res://scenes/present.tscn" id="4_yk2ki"]
-[ext_resource type="PackedScene" uid="uid://5cv7gl7d7ai4" path="res://scenes/basic_building.tscn" id="5_qqm1j"]
+[ext_resource type="PackedScene" uid="uid://5cv7gl7d7ai4" path="res://scenes/Buildings/TESTS/basic_building.tscn" id="5_qqm1j"]
 [ext_resource type="PackedScene" uid="uid://6yr24cgg6tn5" path="res://scenes/str_door.tscn" id="6_5rokf"]
-[ext_resource type="PackedScene" uid="uid://y3frjc5br7ie" path="res://scenes/basic_building_2.tscn" id="6_i7wux"]
+[ext_resource type="PackedScene" uid="uid://y3frjc5br7ie" path="res://scenes/Buildings/TESTS/basic_building_2.tscn" id="6_i7wux"]
 [ext_resource type="PackedScene" uid="uid://ug2f0iv3jrl2" path="res://scenes/dia_door.tscn" id="7_g88p4"]
 [ext_resource type="PackedScene" uid="uid://dju6t1b4y10ok" path="res://scenes/dia_door_l.tscn" id="8_qw33r"]
-[ext_resource type="PackedScene" uid="uid://jic670w2mg03" path="res://scenes/brick_building_1.tscn" id="10_u64ne"]
+[ext_resource type="PackedScene" uid="uid://jic670w2mg03" path="res://scenes/Buildings/BRICK/brick_building_1.tscn" id="10_u64ne"]
+[ext_resource type="PackedScene" uid="uid://xlw6ibds7jvp" path="res://scenes/Buildings/BRICK/brick_building_2.tscn" id="11_yvegl"]
+[ext_resource type="PackedScene" uid="uid://c1sfek67n174e" path="res://scenes/Buildings/BRICK/brick_building_3.tscn" id="12_jfjba"]
+[ext_resource type="PackedScene" uid="uid://d1h10eug27hhu" path="res://scenes/testrecolor.tscn" id="14_8ge7l"]
 
 [sub_resource type="Environment" id="Environment_sveyw"]
 background_mode = 3
@@ -72,6 +75,8 @@ scenes/3/scene = ExtResource("6_5rokf")
 scenes/4/scene = ExtResource("7_g88p4")
 scenes/5/scene = ExtResource("8_qw33r")
 scenes/6/scene = ExtResource("10_u64ne")
+scenes/7/scene = ExtResource("11_yvegl")
+scenes/8/scene = ExtResource("12_jfjba")
 
 [sub_resource type="TileSet" id="TileSet_820yl"]
 sources/0 = SubResource("TileSetScenesCollectionSource_hvu70")
@@ -103,7 +108,7 @@ tile_set = SubResource("TileSet_6jkef")
 
 [node name="buildings" type="TileMapLayer" parent="ysortedOBJ"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAADAAUAAAAAAAAAAQAIAAUAAAAAAAAAAgD9/woAAAAAAAAAAQAOAAsAAAAAAAAAAQADABEAAAAAAAAAAQAJAAcAAAAAAAAABAAHAAcAAAAAAAAAAwACAAgAAAAAAAAAAwD8/w0AAAAAAAAAAwACABQAAAAAAAAAAwANAA4AAAAAAAAAAwD8/woAAAAAAAAAAwACAAUAAAAAAAAAAwAMAAsAAAAAAAAAAwAPAAsAAAAAAAAAAwAEABEAAAAAAAAAAwACABEAAAAAAAAAAwAHAAUAAAAAAAAAAwAGAAcAAAAAAAAABQD6/xEAAAAAAAAAAgAOABQAAAAAAAAAAgAPAAUAAAAAAAAAAgAIABIAAAAAAAAAAgD8/xYAAAAAAAAAAQD0/woAAAAAAAAAAQD7/wUAAAAAAAAAAQD6/wgAAAAAAAAAAwDz/w0AAAAAAAAAAwD0/w0AAAAAAAAAAwD7/xkAAAAAAAAAAwD5/xMAAAAAAAAAAwAIABQAAAAAAAAAAwANABYAAAAAAAAAAwAPAAcAAAAAAAAAAwAQAAcAAAAAAAAABAAPABYAAAAAAAAABAD4/xMAAAAAAAAABQAGABQAAAAAAAAABQD6/wUAAAAAAAAAAwDy/woAAAAAAAAAAwANABQAAAAAAAAAAwAHABIAAAAAAAAAAwD6/xYAAAAAAAAAAwAOAAUAAAAAAAAAAwAXAAcAAAAAAAAABgA=")
+tile_map_data = PackedByteArray("AAD7/wUAAAAAAAAABgD2/wkAAAAAAAAABwAAAAMAAAAAAAAACAD2/wwAAAAAAAAAAwD4/wwAAAAAAAAAAwD6/wwAAAAAAAAAAwD8/wcAAAAAAAAAAwABAAYAAAAAAAAAAwAEAAUAAAAAAAAABAD9/wcAAAAAAAAABAD1/wwAAAAAAAAABQD2/wgAAAAAAAAAAwACAAMAAAAAAAAAAwA=")
 tile_set = SubResource("TileSet_820yl")
 
 [node name="presents" type="Node2D" parent="ysortedOBJ"]
@@ -918,3 +923,9 @@ position = Vector2(124, 225)
 
 [node name="Present270" parent="ysortedOBJ/presents" instance=ExtResource("4_yk2ki")]
 position = Vector2(129, 215)
+
+[node name="basicBuilding" parent="ysortedOBJ" instance=ExtResource("6_i7wux")]
+position = Vector2(129, 64)
+
+[node name="Node2D" parent="ysortedOBJ" instance=ExtResource("14_8ge7l")]
+position = Vector2(-215, 272)

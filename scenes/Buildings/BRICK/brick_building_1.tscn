@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=4 uid="uid://jic670w2mg03"]
+
+[ext_resource type="Script" path="res://scripts/basic_building.gd" id="1_ejm08"]
+[ext_resource type="TileSet" uid="uid://dsk05kendeeho" path="res://scenes/Buildings/TileMaps/BackTiles.tres" id="2_6mic3"]
+[ext_resource type="TileSet" uid="uid://j8mrw416du8d" path="res://scenes/Buildings/TileMaps/BrickFrontTiles.tres" id="3_imgqm"]
+
+[node name="BrickBuilding1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ejm08")
+
+[node name="Back" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.607843)
+y_sort_enabled = true
+position = Vector2(8, -8)
+tile_map_data = PackedByteArray("AAD+/wIAAAAOAAQAAAD//wIAAAANAAQAAAAAAAIAAAANAAQAAAD+/wEAAAAOAAMAAAD//wEAAAANAAMAAAAAAAEAAAANAAMAAAD+////AAAOAAUAAAD/////AAAPAAUAAAAAAP//AAAPAAUAAAABAAIAAAAKAAMAAAABAAAAAAATAAQAAAA=")
+tile_set = ExtResource("2_6mic3")
+
+[node name="Front" type="TileMapLayer" parent="."]
+visible = false
+y_sort_enabled = true
+position = Vector2(8, -8)
+tile_map_data = PackedByteArray("AAD+/wEAAAAEAAUAAAD//wEAAAAFAAUAAAAAAAEAAAAFAAUAAAAAAP7/AAAIAAUAAAD///7/AAAIAAUAAAD+//7/AAAHAAUAAAD+////AAAHAAYAAAD/////AAAIAAYAAAAAAP//AAAIAAYAAAABAP7/AAAGAAAAAAABAAEAAAAEAAIAAAABAP//AAAJAAYAAAA=")
+tile_set = ExtResource("3_imgqm")
+
+[node name="Center" type="Marker2D" parent="."]
+position = Vector2(0, 8)
