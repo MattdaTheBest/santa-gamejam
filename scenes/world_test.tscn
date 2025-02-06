@@ -95,6 +95,10 @@ y_sort_enabled = true
 [node name="player" parent="ysortedOBJ" instance=ExtResource("2_7xs0n")]
 position = Vector2(8, 189)
 
+[node name="Camera2D2" type="Camera2D" parent="ysortedOBJ/player"]
+position = Vector2(2, 1)
+zoom = Vector2(3, 3)
+
 [node name="doorsFront" type="TileMapLayer" parent="ysortedOBJ"]
 z_index = 1
 tile_map_data = PackedByteArray("AAATAP//AAAHAAQAAAAPAP//AAAHAAQAAAAVAP7/AAAHAAQAAAAYAP7/AAAHAAQAAAAZAP7/AAAIAAQAAAASAP//AAAIAAQAABAUAP//AAAIAAQAAAAQAP//AAAIAAQAAAALAP//AAAHAAQAAAAHAP//AAAHAAQAAAADAP//AAAHAAQAAAAdAP7/AAAIAAQAAAAfAP7/AAAIAAQAAAAhAP7/AAAIAAQAAAAcAP7/AAAIAAQAABA=")

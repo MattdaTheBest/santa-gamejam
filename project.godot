@@ -78,6 +78,9 @@ spacebar={
 
 [physics]
 
+2d/run_on_separate_thread=true
+2d/physics_engine="GodotPhysics2D"
+2d/solver/solver_iterations=64
 common/physics_interpolation=true
 
 [rendering]
