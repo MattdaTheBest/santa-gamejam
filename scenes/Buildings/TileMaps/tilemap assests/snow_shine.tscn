@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg3hvncc10ddv"]
+
+[ext_resource type="Script" path="res://scripts/snow_shine.gd" id="1_xqswj"]
+
+[sub_resource type="Gradient" id="Gradient_7lois"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s0u2c"]
+gradient = SubResource("Gradient_7lois")
+
+[sub_resource type="Curve" id="Curve_u64sj"]
+_data = [Vector2(0, 0.499287), 0.0, 0.0, 0, 0, Vector2(0.501754, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.499287), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5ykvk"]
+curve = SubResource("Curve_u64sj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_17dfj"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 720.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_5ykvk")
+color_ramp = SubResource("GradientTexture1D_s0u2c")
+
+[node name="snowShine" type="GPUParticles2D"]
+z_index = 8
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_17dfj")
+lifetime = 5.0
+one_shot = true
+script = ExtResource("1_xqswj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

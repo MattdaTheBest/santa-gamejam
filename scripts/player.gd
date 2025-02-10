@@ -30,6 +30,8 @@ var direction : Vector2
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var shadow: AnimatedSprite2D = $shadow
 @onready var player_ui: CanvasLayer = $"../../playerUI"
+@onready var snow_trail: Line2D = $snowTrail
+
 
 
 
@@ -43,6 +45,8 @@ func _physics_process(delta: float) -> void:#
 	#cash.text = str(playerMoney)
 	#print(presentList.size())
 	
+
+		
 	shot_power.value = shotPower
 	
 	var is_drifting = Input.is_action_pressed("spacebar")
@@ -97,6 +101,8 @@ func _physics_process(delta: float) -> void:#
 	updateSpriteAngle()
 	velocity = currentSpeed * direction 
 	move_and_slide()
+	updateTrail()
+
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("present") and not presentList.has(area.get_parent()) and presentList.size() < maxTrailSize:
@@ -123,7 +129,6 @@ func shootPresent(power):
 	if present != null:	
 		present.shootPresent(power)
 		
-
 func rotatePresentsRight():
 	if presentList.size() > 1:
 		var tempList = presentList.duplicate()
@@ -185,4 +190,10 @@ func _on_interact_area_body_entered(body: Node2D) -> void:
 		player_ui.updateJaffas(playerJaffas)
 		body.pickupAnimation()
 
+func updateTrail():
+	if snow_trail.get_point_count() >= 200 or velocity == Vector2(0,0) and snow_trail.get_point_count() > 0:
+		snow_trail.remove_point(0)
+	if velocity != Vector2(0,0):
+		snow_trail.add_point(global_position)
 		
+	snow_trail.rotation_degrees = rotation_degrees

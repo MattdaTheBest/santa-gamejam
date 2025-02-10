@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg3hvncc10ddv"]
+
+[ext_resource type="Script" path="res://scenes/Buildings/BRICK/snow_shine.gd" id="1_cav6p"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_17dfj"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+
+[node name="snowShine" type="GPUParticles2D"]
+z_index = 6
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_17dfj")
+lifetime = 5.0
+one_shot = true
+script = ExtResource("1_cav6p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

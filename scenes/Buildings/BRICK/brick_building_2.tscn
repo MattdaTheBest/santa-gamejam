@@ -1,6 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://xlw6ibds7jvp"]
+[gd_scene load_steps=11 format=4 uid="uid://xlw6ibds7jvp"]
 
 [ext_resource type="Script" path="res://scripts/basic_building.gd" id="1_gsolq"]
+[ext_resource type="TileSet" uid="uid://j8mrw416du8d" path="res://scenes/Buildings/TileMaps/BrickFrontTiles.tres" id="2_lwhmh"]
+[ext_resource type="TileSet" uid="uid://df73tot003u12" path="res://scenes/Buildings/TileMaps/snowTopTiles.tres" id="3_8iymy"]
+[ext_resource type="PackedScene" uid="uid://d35633vb8coo0" path="res://scenes/Buildings/TileMaps/tilemap assests/brick_chimney.tscn" id="3_hvixl"]
+[ext_resource type="TileSet" uid="uid://drxobj2iqbjfk" path="res://scenes/Buildings/TileMaps/extrasTileSet.tres" id="4_7mxkr"]
+[ext_resource type="Script" path="res://scripts/snowSpawnArea.gd" id="5_itfrw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ofdn0"]
 load_path = "res://.godot/imported/brickTileSet.png-750f0b3cd36a7c5673788a5b332d2291.ctex"
@@ -117,165 +122,7 @@ texture = SubResource("CompressedTexture2D_ofdn0")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n0yyq")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3gamj"]
-load_path = "res://.godot/imported/brickTileSet.png-750f0b3cd36a7c5673788a5b332d2291.ctex"
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_30bi0"]
-texture = SubResource("CompressedTexture2D_3gamj")
-1:0/0 = 0
-1:0/0/z_index = 5
-1:0/0/y_sort_origin = 8
-2:0/0 = 0
-2:0/0/z_index = 5
-2:0/0/y_sort_origin = 8
-3:0/0 = 0
-3:0/0/z_index = 5
-3:0/0/y_sort_origin = 8
-4:0/0 = 0
-4:0/0/z_index = 5
-4:0/0/y_sort_origin = 8
-5:0/0 = 0
-5:0/0/z_index = 5
-5:0/0/y_sort_origin = 8
-6:0/0 = 0
-6:0/0/z_index = 5
-6:0/0/y_sort_origin = 8
-9:3/0 = 0
-9:3/0/y_sort_origin = -8
-10:3/0 = 0
-10:3/0/y_sort_origin = -8
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-13:3/0/y_sort_origin = -8
-14:3/0 = 0
-14:3/0/y_sort_origin = -8
-15:3/0 = 0
-15:3/0/y_sort_origin = -8
-16:3/0 = 0
-16:3/0/y_sort_origin = -8
-13:4/0 = 0
-13:4/0/y_sort_origin = -8
-14:4/0 = 0
-14:4/0/y_sort_origin = -8
-15:4/0 = 0
-15:4/0/y_sort_origin = -8
-16:4/0 = 0
-16:4/0/y_sort_origin = -8
-17:4/0 = 0
-17:4/0/y_sort_origin = -8
-18:4/0 = 0
-19:4/0 = 0
-7:5/0 = 0
-7:5/0/z_index = 5
-7:5/0/y_sort_origin = 8
-8:5/0 = 0
-8:5/0/z_index = 5
-8:5/0/y_sort_origin = 8
-9:5/0 = 0
-9:5/0/z_index = 5
-9:5/0/y_sort_origin = 8
-7:6/0 = 0
-7:6/0/z_index = 5
-7:6/0/y_sort_origin = 8
-8:6/0 = 0
-8:6/0/z_index = 5
-8:6/0/y_sort_origin = 8
-9:6/0 = 0
-9:6/0/z_index = 5
-9:6/0/y_sort_origin = 8
-7:7/0 = 0
-7:7/0/y_sort_origin = 20
-8:7/0 = 0
-4:5/size_in_atlas = Vector2i(1, 3)
-4:5/0 = 0
-4:5/0/y_sort_origin = 24
-5:5/size_in_atlas = Vector2i(1, 3)
-5:5/0 = 0
-5:5/0/y_sort_origin = 24
-6:5/size_in_atlas = Vector2i(1, 3)
-6:5/0 = 0
-6:5/0/y_sort_origin = 24
-1:1/size_in_atlas = Vector2i(1, 4)
-1:1/0 = 0
-1:1/0/texture_origin = Vector2i(0, -8)
-1:1/0/y_sort_origin = 24
-2:1/size_in_atlas = Vector2i(1, 4)
-2:1/0 = 0
-2:1/0/texture_origin = Vector2i(0, -8)
-2:1/0/y_sort_origin = 24
-6:1/size_in_atlas = Vector2i(1, 4)
-6:1/0 = 0
-6:1/0/texture_origin = Vector2i(0, -8)
-6:1/0/y_sort_origin = 24
-5:1/size_in_atlas = Vector2i(1, 4)
-5:1/0 = 0
-5:1/0/texture_origin = Vector2i(0, -8)
-5:1/0/y_sort_origin = 24
-3:2/size_in_atlas = Vector2i(1, 3)
-3:2/0 = 0
-3:2/0/y_sort_origin = 16
-4:2/size_in_atlas = Vector2i(1, 3)
-4:2/0 = 0
-4:2/0/y_sort_origin = 16
-4:1/0 = 0
-4:1/0/z_index = 5
-3:1/0 = 0
-3:1/0/z_index = 5
-14:5/size_in_atlas = Vector2i(1, 3)
-14:5/0 = 0
-14:5/0/y_sort_origin = 24
-15:5/size_in_atlas = Vector2i(1, 3)
-15:5/0 = 0
-15:5/0/y_sort_origin = 24
-16:5/size_in_atlas = Vector2i(1, 3)
-16:5/0 = 0
-16:5/0/y_sort_origin = 24
-18:5/size_in_atlas = Vector2i(1, 3)
-18:5/0 = 0
-18:5/0/y_sort_origin = 24
-19:5/size_in_atlas = Vector2i(1, 3)
-19:5/0 = 0
-19:5/0/y_sort_origin = 24
-10:5/0 = 0
-10:5/0/z_index = 5
-10:5/0/y_sort_origin = 8
-11:5/0 = 0
-11:5/0/z_index = 5
-11:5/0/y_sort_origin = 8
-11:6/0 = 0
-11:6/0/z_index = 5
-11:6/0/y_sort_origin = 8
-10:6/0 = 0
-10:6/0/z_index = 5
-10:6/0/y_sort_origin = 8
-1:5/size_in_atlas = Vector2i(1, 3)
-1:5/0 = 0
-1:5/0/y_sort_origin = 24
-2:5/size_in_atlas = Vector2i(1, 3)
-2:5/0 = 0
-2:5/0/y_sort_origin = 24
-3:5/size_in_atlas = Vector2i(1, 3)
-3:5/0 = 0
-3:5/0/y_sort_origin = 24
-0:5/size_in_atlas = Vector2i(1, 3)
-0:5/0 = 0
-0:5/0/y_sort_origin = 24
-12:5/0 = 0
-12:5/0/z_index = 5
-12:5/0/y_sort_origin = 8
-12:6/0 = 0
-12:6/0/z_index = 5
-12:6/0/y_sort_origin = 8
-13:5/0 = 0
-13:5/0/z_index = 5
-13:5/0/y_sort_origin = 8
-13:6/0 = 0
-13:6/0/z_index = 5
-13:6/0/y_sort_origin = 8
-
-[sub_resource type="TileSet" id="TileSet_l0e7m"]
-sources/0 = SubResource("TileSetAtlasSource_30bi0")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_57t10"]
 
 [node name="BrickBuilding2" type="Node2D"]
 y_sort_enabled = true
@@ -289,11 +136,43 @@ tile_map_data = PackedByteArray("AAD//wAAAAANAAMAAAAAAAAAAAANAAMAAAD+////AAASAAQ
 tile_set = SubResource("TileSet_twoj5")
 
 [node name="Front" type="TileMapLayer" parent="."]
-visible = false
 y_sort_enabled = true
 position = Vector2(8, -8)
-tile_map_data = PackedByteArray("AAD+/wIAAAADAAIAAAD//wIAAAAFAAUAAAAAAAIAAAAFAAUAAAABAAIAAAAFAAUAAAACAAIAAAAFAAUAAAADAAIAAAAFAAUAAAAEAAIAAAAEAAIAAAAEAAAAAAAJAAYAAAAEAP//AAAGAAAAAAADAP//AAAIAAUAAAACAP//AAAIAAUAAAD+/wAAAAAHAAYAAAD+////AAAHAAYAAAD+//7/AAAHAAYAAAD+//3/AAABAAAAAAD///3/AAAIAAUAAAAAAP3/AAAIAAUAAAABAP3/AAAGAAAAAAABAP7/AAAJAAYAAAD//wAAAAAIAAYAAAD/////AAAIAAYAAAD///7/AAAIAAYAAAAAAP7/AAAIAAYAAAAAAP//AAAIAAYAAAAAAAAAAAAIAAYAAAADAAAAAAAIAAYAAAACAAAAAAAIAAYAAAABAAAAAAAIAAYAAAABAP//AAAKAAYAAAA=")
-tile_set = SubResource("TileSet_l0e7m")
+tile_map_data = PackedByteArray("AAD+/wIAAAADAAIAAAAEAAIAAAAEAAIAAAAEAAAAAAAJAAYAAAAEAP//AAAGAAAAAAADAP//AAAIAAUAAAACAP//AAAIAAUAAAD+/wAAAAAHAAYAAAD+////AAAHAAYAAAD+//7/AAAHAAYAAAD+//3/AAABAAAAAAD///3/AAAIAAUAAAAAAP3/AAAIAAUAAAABAP3/AAAGAAAAAAABAP7/AAAJAAYAAAD//wAAAAAIAAYAAAD/////AAAIAAYAAAD///7/AAAIAAYAAAAAAP7/AAAIAAYAAAAAAP//AAAIAAYAAAAAAAAAAAAIAAYAAAADAAAAAAAIAAYAAAACAAAAAAAIAAYAAAABAAAAAAAIAAYAAAABAP//AAAKAAYAAAADAAIAAAAIAAAAAAACAAIAAAAFAAUAAAABAAIAAAAKAAAAAAAAAAIAAAAJAAAAAAD//wIAAAAIAAAAAAA=")
+tile_set = ExtResource("2_lwhmh")
+
+[node name="Snow" type="TileMapLayer" parent="Front"]
+z_index = 6
+material = SubResource("ShaderMaterial_57t10")
+tile_map_data = PackedByteArray("AAD//wEAAAADAAAAAAAAAAEAAAADAAAAAAABAAEAAAAEAAAAAAACAAEAAAAEAAAAAAADAAEAAAACAAAAAAAEAAEAAAAEAAIAAAD+/wEAAAACAAIAAAD+//3/AAACAAEAAAABAP3/AAAEAAEAAAD///3/AAADAAEAAAAAAP3/AAADAAEAAAACAP//AAAGAAEAAAADAP//AAADAAEAAAAEAP//AAAEAAEAAAD+/wAAAAADAAIAAAD+////AAADAAIAAAD///7/AAADAAIAAAAAAP7/AAADAAIAAAAAAP//AAADAAIAAAD/////AAADAAIAAAD//wAAAAADAAIAAAD+//7/AAADAAIAAAAAAAAAAAADAAIAAAABAP//AAADAAIAAAABAAAAAAADAAIAAAACAAAAAAADAAIAAAADAAAAAAADAAIAAAAEAAAAAAADAAIAAAABAP7/AAADAAIAAAAFAAAAAAAFAAIAAAD9/wAAAAABAAIAAAD9////AAABAAIAAAD9//7/AAABAAIAAAD9//3/AAABAAEAAAACAP3/AAAFAAEAAAACAP7/AAAFAAIAAAD9/wEAAAAGAAIAAAAFAAEAAAAAAAIAAAAFAP//AAAFAAEAAAA=")
+tile_set = ExtResource("3_8iymy")
+
+[node name="Extras" type="TileMapLayer" parent="Front"]
+z_index = 6
+tile_map_data = PackedByteArray("AAD//wMAAAAAAAMAAAADAAMAAAAAAAMAAAD//wIAAAACAAMAAAABAAIAAAACAAMAAAADAAIAAAACAAMAAAAEAAIAAAADAAMAAAA=")
+tile_set = ExtResource("4_7mxkr")
+
+[node name="BrickChimney" parent="Front" instance=ExtResource("3_hvixl")]
+position = Vector2(93, 13)
+
+[node name="BrickChimney2" parent="Front/BrickChimney" index="0"]
+position = Vector2(-16, 7.5)
+flip_h = true
+
+[node name="SnowTop" parent="Front/BrickChimney/BrickChimney2" index="0"]
+position = Vector2(3, -21.5)
+flip_h = true
+
+[node name="CollisionShape2D" parent="Front/BrickChimney/StaticBody2D" index="0"]
+position = Vector2(-12, 32)
+
+[node name="snowSparkleArea" type="Area2D" parent="Front"]
+script = ExtResource("5_itfrw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Front/snowSparkleArea"]
+polygon = PackedVector2Array(-33, 17, -33, -33, -18, -41, 18, -41, 33, -33, 33, -9, 66, -9, 81, -1, 81, 17, 66, 25, -18, 25)
 
 [node name="Center" type="Marker2D" parent="."]
 position = Vector2(59, 24)
+
+[editable path="Front/BrickChimney"]

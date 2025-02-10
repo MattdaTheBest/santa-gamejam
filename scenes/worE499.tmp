@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://fp1jccghjj33"]
+[gd_scene load_steps=16 format=4 uid="uid://fp1jccghjj33"]
 
 [ext_resource type="Script" path="res://scripts/world_test.gd" id="1_mskqx"]
 [ext_resource type="PackedScene" uid="uid://bdxjddcw143ot" path="res://scenes/player.tscn" id="2_7xs0n"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://jic670w2mg03" path="res://scenes/Buildings/BRICK/brick_building_1.tscn" id="10_u64ne"]
 [ext_resource type="PackedScene" uid="uid://xlw6ibds7jvp" path="res://scenes/Buildings/BRICK/brick_building_2.tscn" id="11_yvegl"]
 [ext_resource type="PackedScene" uid="uid://j1l0ctfnmr85" path="res://scenes/present.tscn" id="12_b4k0e"]
-[ext_resource type="PackedScene" uid="uid://cfwkq0ssghsp1" path="res://scenes/Buildings/BRICK/penis_building.tscn" id="12_cv5wy"]
 [ext_resource type="PackedScene" uid="uid://c1sfek67n174e" path="res://scenes/Buildings/BRICK/brick_building_3.tscn" id="12_jfjba"]
 
 [sub_resource type="Environment" id="Environment_cbnsh"]
@@ -26,7 +25,6 @@ scenes/5/scene = ExtResource("8_qw33r")
 scenes/6/scene = ExtResource("10_u64ne")
 scenes/7/scene = ExtResource("11_yvegl")
 scenes/8/scene = ExtResource("12_jfjba")
-scenes/9/scene = ExtResource("12_cv5wy")
 
 [sub_resource type="TileSet" id="TileSet_820yl"]
 sources/0 = SubResource("TileSetScenesCollectionSource_u07f8")
@@ -47,7 +45,7 @@ position = Vector2(-50, 195)
 
 [node name="buildings" type="TileMapLayer" parent="ysortedOBJ"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD1/wkAAAAAAAAABgD7/wQAAAAAAAAACADx/xEAAAAAAAAACADy/wQAAAAAAAAABwACAAYAAAAAAAAABwACAAwAAAAAAAAABgAGAAwAAAAAAAAACAD1/wsAAAAAAAAAAwD8/wcAAAAAAAAAAwADAAkAAAAAAAAAAwAFAAkAAAAAAAAAAwACAA4AAAAAAAAAAwAHAA8AAAAAAAAAAwAJAA4AAAAAAAAAAwAHAAkAAAAAAAAABAD//wYAAAAAAAAABAD1/xMAAAAAAAAABADy/xQAAAAAAAAAAwD+/xUAAAAAAAAABwDs/xoAAAAAAAAABgDr/w8AAAAAAAAACADt/wcAAAAAAAAABgDs/xIAAAAAAAAAAwDs/xwAAAAAAAAAAwD5/xYAAAAAAAAACQAQABAAAAAAAAAACQDl/woAAAAAAAAACQARABQAAAAAAAAABAD0/wcAAAAAAAAAAwD2/wcAAAAAAAAAAwD3/wcAAAAAAAAABAA=")
+tile_map_data = PackedByteArray("AAD1/wkAAAAAAAAABgD7/wQAAAAAAAAACADx/xEAAAAAAAAACADy/wQAAAAAAAAABwACAAYAAAAAAAAABwACAAwAAAAAAAAABgAGAAwAAAAAAAAACADy/wcAAAAAAAAAAwD0/wcAAAAAAAAAAwD2/wcAAAAAAAAAAwD1/wsAAAAAAAAAAwD8/wcAAAAAAAAAAwADAAkAAAAAAAAAAwAFAAkAAAAAAAAAAwACAA4AAAAAAAAAAwAHAA8AAAAAAAAAAwAJAA4AAAAAAAAAAwAHAAkAAAAAAAAABAD//wYAAAAAAAAABAD3/wcAAAAAAAAABAD3/wsAAAAAAAAABAD1/xMAAAAAAAAABADy/xQAAAAAAAAAAwD+/xUAAAAAAAAABwDs/xoAAAAAAAAABgDr/w8AAAAAAAAACADt/wcAAAAAAAAABgDu/wkAAAAAAAAAAwDs/xIAAAAAAAAAAwDs/xwAAAAAAAAAAwDt/xwAAAAAAAAAAwA=")
 tile_set = SubResource("TileSet_820yl")
 
 [node name="presents" type="Node2D" parent="ysortedOBJ"]

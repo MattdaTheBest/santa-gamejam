@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://bdxjddcw143ot"]
+[gd_scene load_steps=43 format=3 uid="uid://bdxjddcw143ot"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1k0tf"]
 [ext_resource type="Texture2D" uid="uid://dxgqfy50s1hj6" path="res://sprites/playerSpriteSheet.png" id="2_4t6ni"]
 [ext_resource type="Texture2D" uid="uid://bdijkcivwfr2x" path="res://sprites/sleighShadowSprites.png" id="2_8cvub"]
 [ext_resource type="Texture2D" uid="uid://c232365nqflnc" path="res://sprites/sled.png" id="2_x13lg"]
+[ext_resource type="Texture2D" uid="uid://dh7olltee3s7" path="res://sprites/sledTracks.png" id="5_68r46"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v00lb"]
 atlas = ExtResource("2_8cvub")
@@ -252,12 +253,16 @@ height = 10.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_50igv"]
 radius = 7.0
 
+[sub_resource type="Gradient" id="Gradient_0qu66"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_1k0tf")
 
 [node name="shadow" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.607843)
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_4je7c")
 offset = Vector2(0, 2)
 
@@ -265,33 +270,40 @@ offset = Vector2(0, 2)
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_s82in")
 animation = &"angles"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_5nrqs")
+frame_progress = 0.315757
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
+y_sort_enabled = true
 zoom = Vector2(2, 2)
 process_callback = 0
-position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
+y_sort_enabled = true
 position = Vector2(-1.19209e-07, -5.96046e-08)
 texture = ExtResource("2_x13lg")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+y_sort_enabled = true
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5nrqs")
+
 [node name="interact_area" type="Area2D" parent="."]
+visible = false
+y_sort_enabled = true
 collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_area"]
+y_sort_enabled = true
 shape = SubResource("CircleShape2D_50igv")
 
 [node name="shotPower" type="ProgressBar" parent="."]
 visible = false
+y_sort_enabled = true
 offset_left = -8.0
 offset_top = 5.0
 offset_right = 8.0
@@ -299,9 +311,20 @@ offset_bottom = 9.0
 show_percentage = false
 
 [node name="Center" type="Marker2D" parent="."]
+y_sort_enabled = true
 
 [node name="Offset" type="Marker2D" parent="Center"]
 position = Vector2(4, 0)
+
+[node name="snowTrail" type="Line2D" parent="."]
+modulate = Color(0, 0, 0, 0.584314)
+top_level = true
+z_index = -1
+position = Vector2(0, 4)
+width = 4.0
+gradient = SubResource("Gradient_0qu66")
+texture = ExtResource("5_68r46")
+texture_mode = 1
 
 [connection signal="area_entered" from="interact_area" to="." method="_on_interact_area_area_entered"]
 [connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]

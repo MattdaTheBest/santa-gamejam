@@ -1,25 +1,25 @@
 [gd_scene load_steps=8 format=3 uid="uid://6yr24cgg6tn5"]
 
-[ext_resource type="Texture2D" uid="uid://bleql3n52lnu0" path="res://sprites/strDoorTEMP.png" id="1_e72ko"]
+[ext_resource type="Texture2D" uid="uid://cpy3oy0h6llto" path="res://sprites/brickstrdoor.png" id="1_dvynh"]
 [ext_resource type="Script" path="res://scripts/str_door.gd" id="2_j3gvx"]
 [ext_resource type="PackedScene" uid="uid://b056kdeqmturq" path="res://scenes/cash_spawner.tscn" id="3_tdgn7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qccon"]
-atlas = ExtResource("1_e72ko")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i455g"]
+atlas = ExtResource("1_dvynh")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qjugq"]
-atlas = ExtResource("1_e72ko")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n2my"]
+atlas = ExtResource("1_dvynh")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_27rnt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qccon")
+"texture": SubResource("AtlasTexture_i455g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qjugq")
+"texture": SubResource("AtlasTexture_6n2my")
 }],
 "loop": true,
 "name": &"default",
