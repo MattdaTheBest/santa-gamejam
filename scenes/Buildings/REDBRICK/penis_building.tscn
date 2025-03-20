@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=4 uid="uid://cfwkq0ssghsp1"]
+
+[ext_resource type="Script" path="res://scripts/basic_building.gd" id="1_djtyc"]
+[ext_resource type="TileSet" uid="uid://dsk05kendeeho" path="res://scenes/Buildings/TileMaps/BackTiles.tres" id="2_k3ym0"]
+[ext_resource type="TileSet" uid="uid://j8mrw416du8d" path="res://scenes/Buildings/TileMaps/BrickFrontTiles.tres" id="3_c47ix"]
+[ext_resource type="TileSet" uid="uid://df73tot003u12" path="res://scenes/Buildings/TileMaps/snowTopTiles.tres" id="4_4y6ql"]
+[ext_resource type="TileSet" uid="uid://drxobj2iqbjfk" path="res://scenes/Buildings/TileMaps/extrasTileSet.tres" id="5_qhovh"]
+[ext_resource type="Script" path="res://scripts/snowSpawnArea.gd" id="6_c2s8o"]
+[ext_resource type="PackedScene" uid="uid://d35633vb8coo0" path="res://scenes/Buildings/TileMaps/tilemap assests/brick_chimney.tscn" id="7_gr242"]
+
+[node name="PenisBuilding" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_djtyc")
+
+[node name="Back" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+y_sort_enabled = true
+position = Vector2(8, -8)
+tile_map_data = PackedByteArray("AAD+//7/AAASAAQAAAD///7/AAATAAQAAAD9/wIAAAASAAQAAAAAAAIAAAATAAQAAAD9/wQAAAAJAAMAAAD+/wQAAAAKAAMAAAD//wQAAAAJAAMAAAAAAAQAAAAKAAMAAAD//wAAAAAQAAMAAAD//wEAAAAQAAMAAAD//wIAAAAQAAMAAAD+/wAAAAAQAAQAAAD+/wEAAAAQAAQAAAD+/wIAAAAQAAQAAAD//wMAAAARAAQAAAD+/wMAAAARAAQAAAA=")
+tile_set = ExtResource("2_k3ym0")
+
+[node name="Front" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+position = Vector2(8, -8)
+tile_map_data = PackedByteArray("AAD9/wAAAAABAAAAAAD+////AAAHAAYAAAD+/wAAAAANAAUAAAD/////AAAJAAYAAAAAAAAAAAAGAAAAAAD//wAAAAAKAAYAAAD+//7/AAAHAAYAAAD+//3/AAAHAAYAAAD///7/AAAJAAYAAAD///3/AAAJAAYAAAD+//z/AAABAAAAAAD///z/AAAGAAAAAAAAAAMAAAAEAAIAAAD9/wMAAAADAAIAAAD+/wMAAAAEAAIAAAD//wMAAAADAAIAAAD9/wEAAAAHAAYAAAAAAAEAAAAJAAYAAAD+/wEAAAAIAAYAAAD//wEAAAAIAAYAAAA=")
+tile_set = ExtResource("3_c47ix")
+
+[node name="Snow" type="TileMapLayer" parent="Front"]
+z_index = 6
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD+//z/AAACAAEAAAD///z/AAAEAAEAAAD+//3/AAADAAIAAAD+//7/AAADAAIAAAD+////AAADAAIAAAD+/wAAAAADAAIAAAD+/wEAAAADAAIAAAD/////AAADAAIAAAD///7/AAADAAIAAAD///3/AAADAAIAAAD//wEAAAADAAIAAAD//wIAAAACAAIAAAAAAAIAAAAEAAIAAAD9/wIAAAACAAIAAAD+/wIAAAAEAAIAAAD9/wEAAAADAAIAAAAAAAEAAAADAAIAAAAAAAAAAAAFAAAAAAD9/wAAAAABAAAAAAD//wAAAAADAAIAAAABAAEAAAAFAAIAAAD8/wEAAAABAAIAAAABAAIAAAAAAAIAAAD8/wIAAAAGAAIAAAD9//3/AAABAAIAAAD9//7/AAABAAIAAAD9////AAABAAIAAAAAAP3/AAAFAAIAAAAAAP7/AAAFAAIAAAAAAP//AAAFAAIAAAABAAAAAAAGAAAAAAD8/wAAAAAAAAAAAAA=")
+tile_set = ExtResource("4_4y6ql")
+
+[node name="Extra" type="TileMapLayer" parent="Front"]
+z_index = 6
+tile_map_data = PackedByteArray("AAD9/wMAAAADAAIAAAAAAAMAAAADAAMAAAD+/wQAAAADAAMAAAA=")
+tile_set = ExtResource("5_qhovh")
+
+[node name="extras" type="Node2D" parent="Front"]
+
+[node name="snowSparkleArea" type="Area2D" parent="Front"]
+script = ExtResource("6_c2s8o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Front/snowSparkleArea"]
+polygon = PackedVector2Array(-33, 7, -33, -49, -16, -57, 1, -49, 1, 7, 17, 15, 17, 33, 0, 41, -16, 34, -32, 41, -49, 33, -49, 15)
+
+[node name="BrickChimney" parent="Front" instance=ExtResource("7_gr242")]
+position = Vector2(14, 26)
+
+[node name="BrickChimney2" parent="Front/BrickChimney" index="0"]
+flip_h = true
+
+[node name="SnowTop" parent="Front/BrickChimney/BrickChimney2" index="0"]
+position = Vector2(3, -21.5)
+
+[node name="Center" type="Marker2D" parent="."]
+position = Vector2(0, 8)
+
+[editable path="Front/BrickChimney"]

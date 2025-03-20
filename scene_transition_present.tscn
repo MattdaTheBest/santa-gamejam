@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://cnytpei72fo12"]
+
+[ext_resource type="Script" path="res://scene_transition_present.gd" id="1_ui5ou"]
+[ext_resource type="Texture2D" uid="uid://8e27wt66qq13" path="res://sprites/UI/uiPresent.png" id="2_xxpby"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdsl7"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ampsh"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bweqd"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0r6q"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8h3l"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rrul"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih518"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x78o"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8oye"]
+atlas = ExtResource("2_xxpby")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkauv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdsl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ampsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bweqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0r6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8h3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rrul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih518")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2x78o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8oye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="sceneTransitionPresent" type="Control"]
+z_index = 110
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_ui5ou")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+sprite_frames = SubResource("SpriteFrames_xkauv")

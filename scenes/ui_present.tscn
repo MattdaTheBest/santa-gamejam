@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b35tpa6kcl6pa"]
+[gd_scene load_steps=16 format=3 uid="uid://b35tpa6kcl6pa"]
 
 [ext_resource type="Script" path="res://scripts/ui_present.gd" id="1_204hs"]
-[ext_resource type="Texture2D" uid="uid://8e27wt66qq13" path="res://sprites/uiPresent.png" id="3_38wjv"]
+[ext_resource type="Texture2D" uid="uid://8e27wt66qq13" path="res://sprites/UI/uiPresent.png" id="3_38wjv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sul4j"]
 atlas = ExtResource("3_38wjv")
@@ -35,6 +35,22 @@ region = Rect2(96, 0, 16, 16)
 atlas = ExtResource("3_38wjv")
 region = Rect2(112, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w77ml"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgror"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8l7w"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvaji"]
+atlas = ExtResource("3_38wjv")
+region = Rect2(176, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_f2o18"]
 animations = [{
 "frames": [{
@@ -61,6 +77,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_22lxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w77ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgror")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8l7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvaji")
 }],
 "loop": true,
 "name": &"default",

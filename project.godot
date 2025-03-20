@@ -15,6 +15,14 @@ run/main_scene="res://scenes/world_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://sprites/icon.svg"
 
+[autoload]
+
+PlayerVariables="*res://scripts/AutoLoads/PlayerVariables.gd"
+PresentStats="*res://scripts/AutoLoads/PresentStats.gd"
+SceneTransition="*res://sceneTransition.tscn"
+PlayerUi="*res://scenes/player_ui.tscn"
+PresentUpgradeVariables="*res://scripts/AutoLoads/presentUpgradeVariables.gd"
+
 [display]
 
 window/stretch/mode="viewport"
@@ -27,6 +35,7 @@ player=""
 cash=""
 door=""
 jaffa=""
+Level=""
 
 [input]
 
@@ -75,17 +84,20 @@ spacebar={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
+shift={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
 
 [physics]
 
 2d/run_on_separate_thread=true
+common/max_physics_steps_per_frame=16
 2d/physics_engine="GodotPhysics2D"
 2d/solver/solver_iterations=64
-common/physics_interpolation=true
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 textures/canvas_textures/default_texture_repeat=1
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

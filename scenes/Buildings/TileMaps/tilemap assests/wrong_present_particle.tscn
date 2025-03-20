@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgya8wq6ulbf2"]
+
+[ext_resource type="Texture2D" uid="uid://d06s82yr3nw18" path="res://sprites/Tiles/Tile Pieces/xParticle.png" id="1_hu72p"]
+[ext_resource type="Script" path="res://scripts/wrong_present_particle.gd" id="2_sumuw"]
+
+[sub_resource type="Gradient" id="Gradient_kwfwd"]
+offsets = PackedFloat32Array(0.787952, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yu8dg"]
+gradient = SubResource("Gradient_kwfwd")
+
+[sub_resource type="Curve" id="Curve_x7gx7"]
+_data = [Vector2(0, 0.502128), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_52x0p"]
+curve = SubResource("Curve_x7gx7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3wwjx"]
+particle_flag_disable_z = true
+angular_velocity_min = -8.00002
+angular_velocity_max = 7.99998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.75
+scale_curve = SubResource("CurveTexture_52x0p")
+color_ramp = SubResource("GradientTexture1D_yu8dg")
+
+[node name="wrongPresentParticle" type="GPUParticles2D"]
+z_index = 2
+position = Vector2(0, -6)
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_3wwjx")
+texture = ExtResource("1_hu72p")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("2_sumuw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

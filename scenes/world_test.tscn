@@ -1,18 +1,24 @@
-[gd_scene load_steps=17 format=4 uid="uid://fp1jccghjj33"]
+[gd_scene load_steps=23 format=4 uid="uid://fp1jccghjj33"]
 
 [ext_resource type="Script" path="res://scripts/world_test.gd" id="1_mskqx"]
 [ext_resource type="PackedScene" uid="uid://bdxjddcw143ot" path="res://scenes/player.tscn" id="2_7xs0n"]
-[ext_resource type="PackedScene" uid="uid://dk16b1riqhi1e" path="res://scenes/player_ui.tscn" id="2_84jap"]
 [ext_resource type="PackedScene" uid="uid://5cv7gl7d7ai4" path="res://scenes/Buildings/TESTS/basic_building.tscn" id="5_qqm1j"]
-[ext_resource type="PackedScene" uid="uid://6yr24cgg6tn5" path="res://scenes/str_door.tscn" id="6_5rokf"]
+[ext_resource type="PackedScene" uid="uid://wbjicp062w02" path="res://scenes/Buildings/REDBRICK/brick_building_1_FLIPPED.tscn" id="5_wxc7v"]
+[ext_resource type="PackedScene" uid="uid://6yr24cgg6tn5" path="res://scenes/Buildings/Doors/str_door.tscn" id="6_5rokf"]
 [ext_resource type="PackedScene" uid="uid://y3frjc5br7ie" path="res://scenes/Buildings/TESTS/basic_building_2.tscn" id="6_i7wux"]
-[ext_resource type="PackedScene" uid="uid://ug2f0iv3jrl2" path="res://scenes/dia_door.tscn" id="7_g88p4"]
-[ext_resource type="PackedScene" uid="uid://dju6t1b4y10ok" path="res://scenes/dia_door_l.tscn" id="8_qw33r"]
-[ext_resource type="PackedScene" uid="uid://jic670w2mg03" path="res://scenes/Buildings/BRICK/brick_building_1.tscn" id="10_u64ne"]
-[ext_resource type="PackedScene" uid="uid://xlw6ibds7jvp" path="res://scenes/Buildings/BRICK/brick_building_2.tscn" id="11_yvegl"]
-[ext_resource type="PackedScene" uid="uid://j1l0ctfnmr85" path="res://scenes/present.tscn" id="12_b4k0e"]
-[ext_resource type="PackedScene" uid="uid://cfwkq0ssghsp1" path="res://scenes/Buildings/BRICK/penis_building.tscn" id="12_cv5wy"]
-[ext_resource type="PackedScene" uid="uid://c1sfek67n174e" path="res://scenes/Buildings/BRICK/brick_building_3.tscn" id="12_jfjba"]
+[ext_resource type="PackedScene" uid="uid://b6ofqdsmt5cj4" path="res://scenes/Buildings/BLUEBRICK/brick_building_tile_set_2_1.tscn" id="6_xqg0f"]
+[ext_resource type="PackedScene" uid="uid://ug2f0iv3jrl2" path="res://scenes/Buildings/Doors/dia_door.tscn" id="7_g88p4"]
+[ext_resource type="PackedScene" uid="uid://dju6t1b4y10ok" path="res://scenes/Buildings/Doors/dia_door_l.tscn" id="8_qw33r"]
+[ext_resource type="PackedScene" uid="uid://jic670w2mg03" path="res://scenes/Buildings/REDBRICK/brick_building_1.tscn" id="10_u64ne"]
+[ext_resource type="PackedScene" uid="uid://xlw6ibds7jvp" path="res://scenes/Buildings/REDBRICK/brick_building_2.tscn" id="11_yvegl"]
+[ext_resource type="PackedScene" uid="uid://cfwkq0ssghsp1" path="res://scenes/Buildings/REDBRICK/penis_building.tscn" id="12_cv5wy"]
+[ext_resource type="PackedScene" uid="uid://c1sfek67n174e" path="res://scenes/Buildings/REDBRICK/brick_building_3.tscn" id="12_jfjba"]
+[ext_resource type="Script" path="res://scripts/presents.gd" id="13_nqppy"]
+[ext_resource type="Texture2D" uid="uid://c3kr3l3lhpg0w" path="res://sprites/Presents&PickUps/presentBundle.png" id="15_1kemb"]
+[ext_resource type="PackedScene" uid="uid://j1l0ctfnmr85" path="res://scenes/present.tscn" id="15_ypke4"]
+[ext_resource type="Script" path="res://scripts/present_bundle.gd" id="16_igksu"]
+[ext_resource type="Texture2D" uid="uid://dupvb5mn8b8iq" path="res://sprites/Presents&PickUps/bundleShadow.png" id="17_loiqw"]
+[ext_resource type="Texture2D" uid="uid://bf6osatnqvyum" path="res://sprites/Tiles/Tile Pieces/snow.png" id="20_65ygd"]
 
 [sub_resource type="Environment" id="Environment_cbnsh"]
 background_mode = 3
@@ -27,58 +33,81 @@ scenes/6/scene = ExtResource("10_u64ne")
 scenes/7/scene = ExtResource("11_yvegl")
 scenes/8/scene = ExtResource("12_jfjba")
 scenes/9/scene = ExtResource("12_cv5wy")
+scenes/10/scene = ExtResource("5_wxc7v")
+scenes/11/scene = ExtResource("6_xqg0f")
 
 [sub_resource type="TileSet" id="TileSet_820yl"]
 sources/0 = SubResource("TileSetScenesCollectionSource_u07f8")
 
-[node name="world" type="Node2D"]
+[node name="world" type="Node2D" groups=["Level"]]
 script = ExtResource("1_mskqx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cbnsh")
 
-[node name="playerUI" parent="." instance=ExtResource("2_84jap")]
-
 [node name="ysortedOBJ" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="player" parent="ysortedOBJ" instance=ExtResource("2_7xs0n")]
-position = Vector2(-50, 195)
+position = Vector2(-50, 197)
 
 [node name="buildings" type="TileMapLayer" parent="ysortedOBJ"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD1/wkAAAAAAAAABgD7/wQAAAAAAAAACADx/xEAAAAAAAAACADy/wQAAAAAAAAABwACAAYAAAAAAAAABwACAAwAAAAAAAAABgAGAAwAAAAAAAAACAD1/wsAAAAAAAAAAwD8/wcAAAAAAAAAAwADAAkAAAAAAAAAAwAFAAkAAAAAAAAAAwACAA4AAAAAAAAAAwAHAA8AAAAAAAAAAwAJAA4AAAAAAAAAAwAHAAkAAAAAAAAABAD//wYAAAAAAAAABAD1/xMAAAAAAAAABADy/xQAAAAAAAAAAwD+/xUAAAAAAAAABwDs/xoAAAAAAAAABgDr/w8AAAAAAAAACADt/wcAAAAAAAAABgDs/xIAAAAAAAAAAwDs/xwAAAAAAAAAAwD5/xYAAAAAAAAACQAQABAAAAAAAAAACQDl/woAAAAAAAAACQARABQAAAAAAAAABAD0/wcAAAAAAAAAAwD2/wcAAAAAAAAAAwD3/wcAAAAAAAAABAA=")
+tile_map_data = PackedByteArray("AAD7/wcAAAAAAAAACwD7/woAAAAAAAAAAwD0/wkAAAAAAAAABgACAAwAAAAAAAAACADw/wkAAAAAAAAACgAJAA4AAAAAAAAACwD+/xUAAAAAAAAACQDv/w4AAAAAAAAACAACABQAAAAAAAAABgD1/xQAAAAAAAAACADx/xUAAAAAAAAABgDp/wkAAAAAAAAACwDy/wMAAAAAAAAACQA=")
 tile_set = SubResource("TileSet_820yl")
 
 [node name="presents" type="Node2D" parent="ysortedOBJ"]
 y_sort_enabled = true
+script = ExtResource("13_nqppy")
 
-[node name="Present" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-66, 181)
+[node name="Present31" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-115, 225)
 
-[node name="Present2" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-83, 194)
+[node name="Present32" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-101, 227)
 
-[node name="Present3" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-75, 188)
+[node name="Present33" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-106, 248)
 
-[node name="Present4" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-67, 196)
+[node name="Present34" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-110, 208)
 
-[node name="Present5" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-52, 174)
+[node name="Present35" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-120, 221)
 
-[node name="Present6" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-79, 170)
+[node name="Present36" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-126, 237)
 
-[node name="Present7" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-87, 183)
+[node name="Present37" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-129, 225)
 
-[node name="Present8" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-63, 165)
+[node name="Present38" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-103, 220)
 
-[node name="Present9" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-76, 180)
+[node name="Present39" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
+position = Vector2(-111, 234)
 
-[node name="Present10" parent="ysortedOBJ/presents" instance=ExtResource("12_b4k0e")]
-position = Vector2(-56, 183)
+[node name="PresentBundle" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-114, 195)
+texture = ExtResource("15_1kemb")
+script = ExtResource("16_igksu")
+
+[node name="shadow" type="Sprite2D" parent="PresentBundle"]
+modulate = Color(1, 1, 1, 0.352941)
+z_index = -1
+position = Vector2(-9.53674e-07, 8)
+texture = ExtResource("17_loiqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.817521, 0.817521, 0.817521, 0.85098)
+z_index = -5
+position = Vector2(-79, 256)
+scale = Vector2(68.0625, 41.25)
+texture = ExtResource("20_65ygd")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-72, 206)
+
+[editable path="ysortedOBJ/player"]

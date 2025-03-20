@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=4 uid="uid://5cv7gl7d7ai4"]
 
 [ext_resource type="Script" path="res://scripts/basic_building.gd" id="1_p8avn"]
-[ext_resource type="Texture2D" uid="uid://2gtg8vtktdi5" path="res://sprites/basicBlock.png" id="2_lukpd"]
-[ext_resource type="Texture2D" uid="uid://ddv5lav5hgq28" path="res://sprites/brickTileSet.png" id="3_nii7b"]
+[ext_resource type="Texture2D" uid="uid://2gtg8vtktdi5" path="res://sprites/Tiles/basicBlock.png" id="2_lukpd"]
+[ext_resource type="Texture2D" uid="uid://ddv5lav5hgq28" path="res://sprites/Tiles/brickTileSet.png" id="3_nii7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jeln1"]
 texture = ExtResource("2_lukpd")

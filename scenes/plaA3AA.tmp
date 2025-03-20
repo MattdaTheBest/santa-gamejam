@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk16b1riqhi1e"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_3a2qh"]
+[ext_resource type="FontFile" uid="uid://elqbs3vvsyfp" path="res://sprites/fonts/GrapeSoda.ttf" id="2_2kgua"]
+[ext_resource type="Texture2D" uid="uid://by6rx1ck84myu" path="res://sprites/piggyBank.png" id="3_kil2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5rrh"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[node name="playerUI" type="CanvasLayer"]
+script = ExtResource("1_3a2qh")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control"]
+z_index = 50
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -39.0
+offset_right = 98.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5rrh")
+
+[node name="MoneyBufferLabel" type="Label" parent="Control/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.533333, 0.772549, 0.686275, 1)
+theme_override_fonts/font = ExtResource("2_2kgua")
+text = "
+asdasd"
+
+[node name="piggyBank" type="Sprite2D" parent="Control/PanelContainer2"]
+position = Vector2(53, -7.5)
+scale = Vector2(4, 4)
+texture = ExtResource("3_kil2m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+offset_right = 141.0
+offset_bottom = 77.0
+
+[node name="cash" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Cash:
+"
+
+[node name="jaffas" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Jaffas: "
+
+[node name="doors" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Remaining Doors: "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -74.0
+offset_right = 32.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+z_index = 50
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -23.0
+offset_right = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5rrh")
+
+[node name="Label" type="Label" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.533333, 0.772549, 0.686275, 1)
+theme_override_fonts/font = ExtResource("2_2kgua")
+text = "ImGay?
+"

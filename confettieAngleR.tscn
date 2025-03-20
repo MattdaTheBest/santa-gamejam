@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbcp8i8r4pyss"]
+
+[ext_resource type="Texture2D" uid="uid://cjeviggi0mi8e" path="res://sprites/confettieFramesExtended.png" id="1_6q7dr"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_snuo1"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_86coa"]
+offsets = PackedFloat32Array(0, 0.0817308, 0.105769, 0.228365, 0.257212, 0.389423, 0.420673, 0.552885, 0.586538, 0.711538, 0.745192, 0.862981, 0.875)
+colors = PackedColorArray(0.898039, 0.898039, 0.898039, 1, 0.898039, 0.898039, 0.898039, 1, 1, 0.364706, 0.8, 1, 1, 0.364706, 0.8, 1, 0.658824, 0.517647, 0.952941, 1, 0.658824, 0.517647, 0.952941, 1, 0.301961, 0.607843, 0.901961, 1, 0.301961, 0.607843, 0.901961, 1, 0.117647, 0.737255, 0.45098, 1, 0.117647, 0.737255, 0.45098, 1, 0.984314, 1, 0.52549, 1, 0.978039, 0.93098, 0.526275, 1, 0.952941, 0.654902, 0.529412, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a5i5i"]
+gradient = SubResource("Gradient_86coa")
+
+[sub_resource type="Gradient" id="Gradient_w51dq"]
+offsets = PackedFloat32Array(0.925481, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_epjnf"]
+gradient = SubResource("Gradient_w51dq")
+
+[sub_resource type="Curve" id="Curve_peh6y"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.218468, 0.82343), 1.32428, 1.32428, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_a3ehp"]
+curve = SubResource("Curve_peh6y")
+
+[sub_resource type="Curve" id="Curve_lcsvp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.745496, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.503396), -5.38982, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_liuqj"]
+curve = SubResource("Curve_lcsvp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_53i3d"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(600, 1, 1)
+direction = Vector3(1, -1, 0)
+initial_velocity_min = 330.0
+initial_velocity_max = 430.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+gravity = Vector3(0, 75, 0)
+linear_accel_min = 10.0
+linear_accel_max = 30.0
+damping_min = 74.0
+damping_max = 78.0
+damping_curve = SubResource("CurveTexture_a3ehp")
+scale_min = 0.55
+scale_max = 1.25
+scale_curve = SubResource("CurveTexture_liuqj")
+color_ramp = SubResource("GradientTexture1D_epjnf")
+color_initial_ramp = SubResource("GradientTexture1D_a5i5i")
+anim_speed_min = 8.0
+anim_speed_max = 12.0
+anim_offset_max = 1.0
+
+[node name="Confettie" type="GPUParticles2D"]
+z_index = -1
+material = SubResource("CanvasItemMaterial_snuo1")
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_53i3d")
+texture = ExtResource("1_6q7dr")
+lifetime = 8.0
+explosiveness = 0.97

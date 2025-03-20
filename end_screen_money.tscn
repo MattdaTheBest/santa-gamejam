@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmhrfc53fmdd3"]
+
+[ext_resource type="Script" path="res://end_screen_money.gd" id="1_wq4iy"]
+[ext_resource type="Texture2D" uid="uid://dbvd4m8ge5nf1" path="res://sprites/UI/spriteBordered.png" id="2_i127t"]
+
+[sub_resource type="Gradient" id="Gradient_hovgx"]
+offsets = PackedFloat32Array(0.727711, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gvdj8"]
+gradient = SubResource("Gradient_hovgx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gck81"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 16.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_max = 6.0
+color_ramp = SubResource("GradientTexture1D_gvdj8")
+
+[node name="endScreenMoney" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_wq4iy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 8
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_gck81")
+one_shot = true
+explosiveness = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("2_i127t")

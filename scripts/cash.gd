@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 	
 func pickupAnimation():
 	var tween = create_tween()
+	money_shadow.visible = false
 	
 	tween.parallel().tween_property(money_shadow, "modulate:a", 0,.0)	
 	tween.parallel().tween_property(money_actual, "rotation_degrees", 360, .65).set_trans(Tween.TRANS_BACK)
@@ -27,5 +28,5 @@ func pickupAnimation():
 	tween.tween_property(money_actual, "rotation_degrees", 0, 0).set_trans(Tween.TRANS_BACK)
 	
 	await tween.finished
-	
+	visible = false
 	call_deferred("free")

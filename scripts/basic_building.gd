@@ -6,12 +6,19 @@ extends Node2D
 @onready var center: Marker2D = $Center
 var above : bool = false
 var player : CharacterBody2D
+@export var flip_H : bool = false
 
 var tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	call_deferred("getPlayer")
 	front.visible = true
+	
+	if flip_H:
+		scale.x = -1
+	else: 
+		scale.x = 1	
+	
 	pass # Replace with function body.
 
 
@@ -31,7 +38,7 @@ func fadeOut():
 	if tween:
 		tween.kill()
 	tween = create_tween()
-	tween.parallel().tween_property(front, "modulate:a", .15, .125)
+	tween.parallel().tween_property(front, "modulate:a", 0.1, .125)
 	#tween.parallel().tween_property(front_door, "modulate:a", .15, .25)
 	
 func fadeIn():

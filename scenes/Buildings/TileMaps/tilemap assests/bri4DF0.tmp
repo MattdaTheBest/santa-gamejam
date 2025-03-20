@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://d35633vb8coo0"]
+
+[ext_resource type="Texture2D" uid="uid://c2tfjekywhcq0" path="res://sprites/brickChimney.png" id="1_3sor7"]
+[ext_resource type="Script" path="res://scenes/Buildings/TileMaps/tilemap assests/brick_chimney.gd" id="1_kq0b4"]
+[ext_resource type="Texture2D" uid="uid://bf8onbxhruval" path="res://sprites/brickSnowTop.png" id="2_nkxon"]
+[ext_resource type="Script" path="res://scripts/snow_sparkle_area_rect.gd" id="3_6kmhj"]
+
+[sub_resource type="Gradient" id="Gradient_48d7v"]
+offsets = PackedFloat32Array(0, 0.801556, 1)
+colors = PackedColorArray(0.332881, 0.332881, 0.332881, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w3q68"]
+gradient = SubResource("Gradient_48d7v")
+
+[sub_resource type="Curve" id="Curve_qp2sm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.754386, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_etopl"]
+curve = SubResource("Curve_qp2sm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_napir"]
+particle_flag_disable_z = true
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+gravity = Vector3(0, -30, 0)
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_etopl")
+color_ramp = SubResource("GradientTexture1D_w3q68")
+turbulence_enabled = true
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35nno"]
+size = Vector2(10, 9)
+
+[node name="BrickChimney" type="Node2D"]
+script = ExtResource("1_kq0b4")
+
+[node name="BrickChimney2" type="Sprite2D" parent="."]
+z_index = 6
+y_sort_enabled = true
+position = Vector2(-1, 11.5)
+texture = ExtResource("1_3sor7")
+
+[node name="SnowTop" type="Sprite2D" parent="BrickChimney2"]
+z_index = 6
+position = Vector2(-3, -21.5)
+texture = ExtResource("2_nkxon")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="BrickChimney2/SnowTop"]
+z_index = 12
+position = Vector2(0, -2)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_napir")
+lifetime = 2.0
+randomness = 0.5
+
+[node name="snowSparkleArea" type="Area2D" parent="BrickChimney2/SnowTop"]
+position = Vector2(0, -2)
+script = ExtResource("3_6kmhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BrickChimney2/SnowTop/snowSparkleArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_35nno")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-9, 34, -4, 40, -4, 28)

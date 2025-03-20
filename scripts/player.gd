@@ -7,15 +7,14 @@ var currentSpeed = 0
 var maxSpeed = 100
 const SlowSPEED = 50
 const maxVelocity = 50
-@export var  maxTrailSize : int = 7
 
-
-var playerMoney : int = 0
-var playerJaffas : int = 0
-
+#@export var  maxTrailSize : int = 7
+#var playerStartingMoney : int = 50
+#var playerMoney : int = 0
+#var playerJaffas : int = 0
+#var presentList = []
 
 var buttonDown : bool = false
-var presentList = []
 var shotPower = 0
 var shotBuildUp = 10
 var shotBasePower = 75
@@ -29,33 +28,31 @@ var direction : Vector2
 @onready var offset: Marker2D = $Center/Offset
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var shadow: AnimatedSprite2D = $shadow
-@onready var player_ui: CanvasLayer = $"../../playerUI"
 @onready var snow_trail: Line2D = $snowTrail
-
-
-
-
-
-
+@onready var player_money_loss_timer: Timer = $playerMoneyLossTimer
 
 func _ready() -> void:
+	call_deferred("setUpValues")
 	pass
+	
 
 func _physics_process(delta: float) -> void:#
 	#cash.text = str(playerMoney)
 	#print(presentList.size())
-	
+
 
 		
 	shot_power.value = shotPower
 	
-	var is_drifting = Input.is_action_pressed("spacebar")
-	if is_drifting:
-		turnSpeed = 250
-		maxSpeed = 75
-	else:
-		turnSpeed = 150
-		maxSpeed = 100
+	if Input.is_action_just_pressed("spacebar"):
+		if Input.is_action_pressed("shift"):
+			PlayerUi.updateMoneyBufferAmount(-10)
+			PlayerVariables.playerMoney -= 10
+		else:
+			PlayerUi.updateMoneyBufferAmount(10)
+			PlayerVariables.playerMoney += 10
+		#	player_ui.updateJaffaBufferAmount(10)
+			#PlayerVariables.maxTrailSize += 1
 	
 	if Input.is_action_pressed("Left") and currentSpeed != 0:
 		currRotation -= turnSpeed * abs(currentSpeed/100) * delta
@@ -77,14 +74,14 @@ func _physics_process(delta: float) -> void:#
 		elif currentSpeed < 0:
 			currentSpeed = min(currentSpeed + decel * delta, 0)
 			
-	if Input.is_action_pressed("leftClick") and not presentList.is_empty():
+	if Input.is_action_pressed("leftClick") and not PlayerVariables.presentList.is_empty():
 		if shotPower < 100:
 			shotPower += shotBuildUp*shotBuildUp * delta
 			
 		if Input.is_action_just_pressed("rightClick"):
 			shotCancel = true
 	
-	if Input.is_action_just_released("leftClick") and not presentList.is_empty():
+	if Input.is_action_just_released("leftClick") and not PlayerVariables.presentList.is_empty():
 		if shotCancel:
 			shotCancel = false
 		else:
@@ -103,70 +100,76 @@ func _physics_process(delta: float) -> void:#
 	move_and_slide()
 	updateTrail()
 
-
 func _on_interact_area_area_entered(area: Area2D) -> void:
-	if area.is_in_group("present") and not presentList.has(area.get_parent()) and presentList.size() < maxTrailSize:
+	if area.is_in_group("present") and not PlayerVariables.presentList.has(area.get_parent()):
 		var present = area.get_parent()
-		if presentList.size() == 0:
-			present.setModeTrailandTarget(self)
-		else:	
-			present.setModeTrailandTarget(presentList[presentList.size() - 1])
+		if (PlayerVariables.presentList.size() < PlayerVariables.maxTrailSize) or (area.get_parent().presentType == "Void Present"):
+			
+			if (area.get_parent().presentType == "Void Present"):
+				PlayerVariables.maxTrailSize += 1
+			
+			if PlayerVariables.presentList.size() == 0:
+				present.setModeTrailandTarget(self)
+			else:	
+				present.setModeTrailandTarget(PlayerVariables.presentList[PlayerVariables.presentList.size() - 1])
+			
+			PlayerVariables.presentList.append(present)
+			PlayerUi.addPresent(present.presentactual.frame, PlayerVariables.maxTrailSize - PlayerVariables.presentList.find(present), present,present.presentType )
+			
 		
-		presentList.append(present)
-		player_ui.addPresent(present.presentactual.frame, maxTrailSize - presentList.find(present), present,present.presentType )
 		
 func shootPresent(power):
-	var present = presentList[0]
-	presentList.remove_at(0)
-	player_ui.call_deferred("removePresent", present)
+	var present = PlayerVariables.presentList[0]
+	PlayerVariables.presentList.remove_at(0)
+	PlayerUi.call_deferred("removePresent", present)
 	
-	for i in presentList.size():
+	for i in PlayerVariables.presentList.size():
 		if i == 0:
-			presentList[i].setTarget(self)
+			PlayerVariables.presentList[i].setTarget(self)
 		else:
-			presentList[i].setTarget(presentList[i - 1])
+			PlayerVariables.presentList[i].setTarget(PlayerVariables.presentList[i - 1])
 	
 	if present != null:	
 		present.shootPresent(power)
 		
 func rotatePresentsRight():
-	if presentList.size() > 1:
-		var tempList = presentList.duplicate()
-		for i in presentList.size():
+	if PlayerVariables.presentList.size() > 1:
+		var tempList = PlayerVariables.presentList.duplicate()
+		for i in PlayerVariables.presentList.size():
 			if i == 0:
-				presentList[i].setTarget(presentList[presentList.size() - 1])
-				presentList[i] = tempList[i + 1]
+				PlayerVariables.presentList[i].setTarget(PlayerVariables.presentList[PlayerVariables.presentList.size() - 1])
+				PlayerVariables.presentList[i] = tempList[i + 1]
 			elif i == 1:
-				presentList[i].setTarget(self)
-				if i == presentList.size() - 1:
-					presentList[i] = tempList[0]	
-				elif i + 1 <= presentList.size() - 1:
-					presentList[i] = tempList[i + 1]
-			elif i == presentList.size() - 1:
-				presentList[i] = tempList[0]
+				PlayerVariables.presentList[i].setTarget(self)
+				if i == PlayerVariables.presentList.size() - 1:
+					PlayerVariables.presentList[i] = tempList[0]	
+				elif i + 1 <= PlayerVariables.presentList.size() - 1:
+					PlayerVariables.presentList[i] = tempList[i + 1]
+			elif i == PlayerVariables.presentList.size() - 1:
+				PlayerVariables.presentList[i] = tempList[0]
 			else:
-				if i + 1 <= presentList.size() - 1:
-					presentList[i] = presentList[i + 1]
-	player_ui.sortPresents()
+				if i + 1 <= PlayerVariables.presentList.size() - 1:
+					PlayerVariables.presentList[i] = PlayerVariables.presentList[i + 1]
+	PlayerUi.sortPresents()
 				
 func rotatePresentsLeft():
-	if presentList.size() > 1:
-		var tempList = presentList.duplicate()
-		for i in presentList.size():
-			var index = (presentList.size()) - (i + 1)
-			if index == presentList.size() - 1:
-				presentList[index].setTarget(self)
-				presentList[index] = tempList[index - 1]
+	if PlayerVariables.presentList.size() > 1:
+		var tempList = PlayerVariables.presentList.duplicate()
+		for i in PlayerVariables.presentList.size():
+			var index = (PlayerVariables.presentList.size()) - (i + 1)
+			if index == PlayerVariables.presentList.size() - 1:
+				PlayerVariables.presentList[index].setTarget(self)
+				PlayerVariables.presentList[index] = tempList[index - 1]
 			elif index == 1:
 				if index - 1 >= 0:
-					presentList[index] = tempList[index - 1]
+					PlayerVariables.presentList[index] = tempList[index - 1]
 			elif index == 0:
-				presentList[index].setTarget(tempList[presentList.size() - 1])
-				presentList[index] = tempList[presentList.size() - 1]
+				PlayerVariables.presentList[index].setTarget(tempList[PlayerVariables.presentList.size() - 1])
+				PlayerVariables.presentList[index] = tempList[PlayerVariables.presentList.size() - 1]
 			else:
 				if index - 1 >= 0:
-					presentList[index] = presentList[index - 1]
-	player_ui.sortPresents()
+					PlayerVariables.presentList[index] = PlayerVariables.presentList[index - 1]
+	PlayerUi.sortPresents()
 
 func updateSpriteAngle(): #16 frames
 	currRotation = fmod(currRotation + 360, 360)
@@ -178,16 +181,18 @@ func updateSpriteAngle(): #16 frames
 	
 func _on_interact_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("cash"):
+		PlayerVariables.playerMoney += body.value
+		PlayerUi.cash.text = str(PlayerVariables.playerMoney)
+		PlayerUi.updateMoneyBufferAmount(body.value)
 		body.call_deferred("remove_from_group", "cash")
-		body.call_deferred("reparent", self)
-		playerMoney += body.value
-		player_ui.updateMoney(playerMoney)
 		body.pickupAnimation()
 	elif body.is_in_group("jaffa"):
+		PlayerUi.updateJaffaBufferAmount(body.value)
 		body.call_deferred("remove_from_group", "jaffa")
-		body.call_deferred("reparent", self)
-		playerJaffas += body.value
-		player_ui.updateJaffas(playerJaffas)
+		#body.call_deferred("reparent", self)
+		PlayerVariables.playerCurrLevelJaffas += body.value
+		#player_ui.updateJaffas(playerJaffas)
+
 		body.pickupAnimation()
 
 func updateTrail():
@@ -197,3 +202,21 @@ func updateTrail():
 		snow_trail.add_point(global_position)
 		
 	snow_trail.rotation_degrees = rotation_degrees
+
+func _on_player_money_loss_timer_timeout() -> void:
+	if not PlayerVariables.pauseMoneyLoss:
+		PlayerVariables.playerMoney -= 1
+		PlayerUi.cash.text = str(PlayerVariables.playerMoney)
+		PlayerUi.updateMoneyDirectAmount()
+
+func setUpValues():
+	PlayerVariables.maxTrailSize = PlayerVariables.christmasCheetLVL + 1
+	PlayerVariables.playerMoney += PlayerVariables.playerStartingMoney
+	PlayerUi.cash.text = str(PlayerVariables.playerMoney)
+	PlayerUi.updateMoneyBufferAmount(PlayerVariables.playerStartingMoney)
+	
+	PlayerVariables.playerCurrLevelJaffas += 5
+	PlayerUi.updateJaffaBufferAmount(5)
+	await get_tree().create_timer(5).timeout
+	player_money_loss_timer.start()
+	player_money_loss_timer.autostart = true	

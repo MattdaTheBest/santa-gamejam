@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://y3frjc5br7ie"]
 
 [ext_resource type="Script" path="res://scripts/basic_building.gd" id="1_oboy1"]
-[ext_resource type="Texture2D" uid="uid://2gtg8vtktdi5" path="res://sprites/basicBlock.png" id="2_0dna4"]
+[ext_resource type="Texture2D" uid="uid://2gtg8vtktdi5" path="res://sprites/Tiles/basicBlock.png" id="2_0dna4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jeln1"]
 texture = ExtResource("2_0dna4")

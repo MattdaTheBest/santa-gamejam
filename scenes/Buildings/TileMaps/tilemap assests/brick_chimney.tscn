@@ -1,7 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://d35633vb8coo0"]
 
-[ext_resource type="Texture2D" uid="uid://c2tfjekywhcq0" path="res://sprites/brickChimney.png" id="1_3sor7"]
-[ext_resource type="Texture2D" uid="uid://bf8onbxhruval" path="res://sprites/brickSnowTop.png" id="2_nkxon"]
+[ext_resource type="Texture2D" uid="uid://c2tfjekywhcq0" path="res://sprites/Tiles/Tile Pieces/brickChimney.png" id="1_3sor7"]
+[ext_resource type="Script" path="res://scripts/brick_chimney.gd" id="1_kq0b4"]
+[ext_resource type="Texture2D" uid="uid://bf8onbxhruval" path="res://sprites/Tiles/Tile Pieces/brickSnowTop.png" id="2_nkxon"]
 [ext_resource type="Script" path="res://scripts/snow_sparkle_area_rect.gd" id="3_6kmhj"]
 
 [sub_resource type="Gradient" id="Gradient_48d7v"]
@@ -33,10 +34,8 @@ turbulence_influence_min = 0.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35nno"]
 size = Vector2(10, 9)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j3lnd"]
-radius = 4.0
-
 [node name="BrickChimney" type="Node2D"]
+script = ExtResource("1_kq0b4")
 
 [node name="BrickChimney2" type="Sprite2D" parent="."]
 z_index = 6
@@ -67,6 +66,5 @@ shape = SubResource("RectangleShape2D_35nno")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-5, 35)
-shape = SubResource("CircleShape2D_j3lnd")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-9, 34, -4, 40, -4, 28)

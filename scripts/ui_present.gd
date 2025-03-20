@@ -40,8 +40,8 @@ func floatSelf():
 func rotateSelf():
 	var tween = create_tween()
 	
-	tween.tween_property(present, "rotation_degrees", randf_range(-2,0),1.5).set_ease(Tween.EASE_OUT).set_delay(randf_range(0,.75))
-	tween.tween_property(present, "rotation_degrees", randf_range(0,2),1.5).set_ease(Tween.EASE_OUT).set_delay(randf_range(0,.75))
+	tween.tween_property(present, "rotation_degrees", randf_range(-5,0),1.5).set_ease(Tween.EASE_OUT).set_delay(randf_range(0,.75))
+	tween.tween_property(present, "rotation_degrees", randf_range(0,5),1.5).set_ease(Tween.EASE_OUT).set_delay(randf_range(0,.75))
 	tween.set_loops()
 	
 func appear(type):

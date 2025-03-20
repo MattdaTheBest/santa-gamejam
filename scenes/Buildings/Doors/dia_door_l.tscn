@@ -1,0 +1,174 @@
+[gd_scene load_steps=23 format=3 uid="uid://dju6t1b4y10ok"]
+
+[ext_resource type="Texture2D" uid="uid://d4iqwq3ikv801" path="res://sprites/Tiles/Tile Pieces/diagDoorTEMP.png" id="1_m35t8"]
+[ext_resource type="Script" path="res://scripts/dia_door.gd" id="2_pyqhb"]
+[ext_resource type="PackedScene" uid="uid://b056kdeqmturq" path="res://scenes/cash_spawner.tscn" id="3_3yt4n"]
+[ext_resource type="Texture2D" uid="uid://dvk3y587but61" path="res://sprites/Tiles/Tile Pieces/diaRibbons.png" id="3_12qd1"]
+[ext_resource type="Texture2D" uid="uid://cg6hokrfaw2ih" path="res://sprites/Tiles/Tile Pieces/smokeParticle.png" id="3_dpcgy"]
+[ext_resource type="Texture2D" uid="uid://m1n6nhhll01x" path="res://sprites/Tiles/Tile Pieces/smokeParticle2.png" id="4_ron11"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk184"]
+atlas = ExtResource("1_m35t8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwdgl"]
+atlas = ExtResource("1_m35t8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gl20n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk184")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwdgl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ip6le"]
+offsets = PackedFloat32Array(0.515663, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1ejmj"]
+gradient = SubResource("Gradient_ip6le")
+
+[sub_resource type="Curve" id="Curve_rpw7q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.749436, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bx0td"]
+curve = SubResource("Curve_rpw7q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x813g"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(3, 4, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_max = 16.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_bx0td")
+color_ramp = SubResource("GradientTexture1D_1ejmj")
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kel25"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(3, 4, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_max = 6.83
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_bx0td")
+color_ramp = SubResource("GradientTexture1D_1ejmj")
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hmmd"]
+atlas = ExtResource("3_12qd1")
+region = Rect2(0, 0, 10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix2sh"]
+atlas = ExtResource("3_12qd1")
+region = Rect2(10, 0, 10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px3jy"]
+atlas = ExtResource("3_12qd1")
+region = Rect2(20, 0, 10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb32k"]
+atlas = ExtResource("3_12qd1")
+region = Rect2(30, 0, 10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrstl"]
+atlas = ExtResource("3_12qd1")
+region = Rect2(40, 0, 10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsf87"]
+atlas = ExtResource("3_12qd1")
+region = Rect2(50, 0, 10, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ep7ju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hmmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix2sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px3jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb32k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrstl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsf87")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="diaDoorL" type="AnimatedSprite2D" groups=["door"]]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_gl20n")
+flip_h = true
+script = ExtResource("2_pyqhb")
+
+[node name="closeParticles" type="GPUParticles2D" parent="."]
+z_index = 2
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_x813g")
+texture = ExtResource("3_dpcgy")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+
+[node name="closeParticles2" type="GPUParticles2D" parent="."]
+z_index = 2
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_kel25")
+texture = ExtResource("4_ron11")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+
+[node name="Ribbon" type="AnimatedSprite2D" parent="."]
+z_index = 5
+y_sort_enabled = true
+position = Vector2(0, -6)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_ep7ju")
+flip_h = true
+
+[node name="cashSpawner" parent="." instance=ExtResource("3_3yt4n")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+y_sort_enabled = true
+polygon = PackedVector2Array(-4, 5, 4, 8, 4, 5, -4, 2)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
