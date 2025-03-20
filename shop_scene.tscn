@@ -662,6 +662,564 @@ layout_mode = 2
 [node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer" instance=ExtResource("3_1pgfe")]
 layout_mode = 2
 
+[node name="VBoxContainer38" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer38" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="VBoxContainer40" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer40" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="VBoxContainer41" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer41" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="VBoxContainer42" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer42" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="VBoxContainer39" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer39" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="VBoxContainer34" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer34" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="VBoxContainer35" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer35" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="VBoxContainer36" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer36" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="VBoxContainer37" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="sceneTransitionPresent" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent2" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent3" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent4" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent5" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent6" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent7" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent8" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent9" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent10" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent11" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent12" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent13" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent14" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent15" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent16" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent17" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent18" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
+[node name="sceneTransitionPresent19" parent="backgroundAnimation/HBoxContainer/VBoxContainer37" instance=ExtResource("3_1pgfe")]
+layout_mode = 2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="backgroundAnimation/HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2

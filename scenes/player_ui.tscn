@@ -278,5 +278,5 @@ text = "4/5
 "
 
 [connection signal="timeout" from="Control/moneyUI/LabelAddedMoney/moneyBufferTimer" to="." method="_on_money_buffer_timer_timeout"]
-[connection signal="timeout" from="Control/moneyUI/LabelAddedJaffas/jaffaBufferTimer" to="." method="_on_money_buffer_timer_timeout"]
 [connection signal="timeout" from="Control/moneyUI/LabelAddedJaffas/jaffaBufferTimer" to="." method="_on_jaffa_buffer_timer_timeout"]
+[connection signal="timeout" from="Control/moneyUI/LabelAddedJaffas/jaffaBufferTimer" to="." method="_on_money_buffer_timer_timeout"]
