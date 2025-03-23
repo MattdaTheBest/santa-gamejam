@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var panel: Panel = $Control/upgradePanel
 @onready var h_box_container: HBoxContainer = $Control/upgradeHBoxContainer
 
+@onready var passivepanel: Panel = $Control/passivepanel
+
 @onready var new_panel: Panel = $Control/newPanel
 @onready var new_h_box_container: HBoxContainer = $Control/newHBoxContainer
 
@@ -52,6 +54,9 @@ func _process(delta: float) -> void:
 	info.global_position.x = $Control/Panel.global_position.x + $Control/Panel.size.x + 25
 	info_title.global_position.x = info.global_position.x + info.size.x/2 - info_title.size.x/2
 
+	passivepanel.global_position.x = $Control/Panel.global_position.x - passivepanel.size.x - 25
+	$Control/passive.global_position = Vector2(passivepanel.global_position.x - ($Control/passive.size.x/2) + passivepanel.size.x/2 ,passivepanel.global_position.y - $Control/passive.size.y/2)
+	
 func appearInfo(name, info):
 	if infoTween:
 		infoTween.kill()
@@ -107,6 +112,8 @@ func scalePanel():
 	$Control/exit.global_position.x -=  86 + 25
 	$Control/ToShop.global_position.x += 86 + 25
 	
+	passivepanel.position.y = -165 -passivepanel.size.y/2 + (275/2)
+	
 	new_panel.pivot_offset = new_panel.size/2
 	panel.pivot_offset = panel.size/2
 	upgrade.pivot_offset = upgrade.size/2
@@ -114,21 +121,26 @@ func scalePanel():
 	$Control/Panel.pivot_offset = $Control/Panel.size/2
 	$Control/info.pivot_offset = $Control/info.size/2
 	$Control/infoTitle.pivot_offset = $Control/infoTitle.size/2
+	$Control/passivepanel.pivot_offset = $Control/passivepanel.size/2
+	$Control/passive.pivot_offset = $Control/passive.size/2
 	
 	animateFloat($Control/upgradePanel, 4)
 	animateFloat($Control/upgrade, 4)
 	animateFloat($Control/new, 4)
 	animateFloat($Control/newPanel, 4)
 	animateFloat($Control/info, 4)
+	animateFloat($Control/passivepanel, 4)
 	animateFloat($Control/infoTitle, 4)				
 	animateFloat($Control/shopsign/S, 8)
 	animateFloat($Control/shopsign/H, 8)
 	animateFloat($Control/shopsign/O, 8)
 	animateFloat($Control/shopsign/P, 8)
 	#animateRotation($Control/Panel,1)
-	animateRotation($Control/upgradePanel,1)
+	animateRotation($Control/passive,1)
+	animateRotation($Control/passivepanel,1)
 	animateRotation($Control/newPanel,1)
 	animateRotation($Control/info,1)
+	animateRotation($Control/upgradePanel,1)
 	animateRotation($Control/infoTitle,1)	
 	animateRotation($Control/shopsign/S,4)
 	animateRotation($Control/shopsign/H,4)
@@ -139,8 +151,6 @@ func scalePanel():
 	
 	#animateFloat(upgrade, 2)
 	#animateFloat(new, 2)
-	
-
 	
 	appearShop()
 	
@@ -162,9 +172,11 @@ func appearShop():
 	tween.set_parallel().tween_property($Control/shopsign/P, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK).set_delay(.65)
 	
 	tween.set_parallel().tween_property(panel, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK)
+	tween.set_parallel().tween_property($Control/passivepanel, "scale:y", 1, .75).set_trans(Tween.TRANS_BACK)
 	tween.set_parallel().tween_property(new_panel, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK)
 	tween.set_parallel().tween_property(upgrade, "scale:y", 1, .35).set_trans(Tween.TRANS_BACK)
 	tween.set_parallel().tween_property(new, "scale:y", 1, .35).set_trans(Tween.TRANS_BACK)
+	tween.set_parallel().tween_property($Control/passive, "scale:y", 1, .35).set_trans(Tween.TRANS_BACK)
 	
 	tween.set_parallel().tween_property(h_box_container, "scale:y", 1, .35).set_trans(Tween.TRANS_BACK).set_delay(.5)
 	tween.set_parallel().tween_property(new_h_box_container, "scale:y", 1, .35).set_trans(Tween.TRANS_BACK).set_delay(.5)

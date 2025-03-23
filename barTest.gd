@@ -289,9 +289,14 @@ func countDownPoints():
 	animateProgressLabel()
 	await get_tree().create_timer(0.0).timeout
 	if pointBufferValue > 0:
-		pointBufferValue -= .25
-		pointActual += .25
-		actual.value = pointActual
+		
+		var tween = create_tween()
+		
+		tween.tween_property(actual, "value", pointBufferValue + pointActual, .5 + pointBufferValue/100).set_ease(Tween.EASE_OUT)
+		
+		await tween.finished
+		pointActual = actual.value
+		pointBufferValue = 0
 		
 		if pointActual >= 100:
 			xpBump()

@@ -528,7 +528,7 @@ offset_left = 198.0
 offset_top = -85.0
 offset_right = 327.0
 offset_bottom = 38.0
-scale = Vector2(1, 1e-05)
+scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(40, 14)
 theme_override_styles/panel = SubResource("StyleBoxFlat_wrrq6")
 
@@ -540,6 +540,67 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.133333, 0.12549, 0.203922, 1)
 theme_override_colors/font_shadow_color = Color(0.533333, 0.772549, 0.686275, 1)
 theme_override_fonts/font = ExtResource("2_ko200")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="passive" type="PanelContainer" parent="Control"]
+z_index = 50
+z_as_relative = false
+offset_left = 238.0
+offset_top = -85.0
+offset_right = 310.0
+offset_bottom = -57.0
+scale = Vector2(1, 1e-05)
+pivot_offset = Vector2(40, 14)
+theme_override_styles/panel = SubResource("StyleBoxFlat_wrrq6")
+
+[node name="passivelabel" type="Label" parent="Control/passive"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.133333, 0.12549, 0.203922, 1)
+theme_override_colors/font_shadow_color = Color(0.533333, 0.772549, 0.686275, 1)
+theme_override_fonts/font = ExtResource("2_ko200")
+text = "Passives"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="passivepanel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -70.0
+offset_right = 122.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1e-05)
+theme_override_styles/panel = SubResource("StyleBoxFlat_sa76s")
+
+[node name="jaffa" type="PanelContainer" parent="Control"]
+z_index = 50
+z_as_relative = false
+offset_left = 198.0
+offset_top = -85.0
+offset_right = 310.0
+offset_bottom = 38.0
+pivot_offset = Vector2(40, 14)
+theme_override_styles/panel = SubResource("StyleBoxFlat_wrrq6")
+
+[node name="jafalabel" type="Label" parent="Control/jaffa"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.133333, 0.12549, 0.203922, 1)
+theme_override_colors/font_shadow_color = Color(0.533333, 0.772549, 0.686275, 1)
+theme_override_fonts/font = ExtResource("2_ko200")
+text = "Jaffas: 12"
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -580,6 +641,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_ohdat")
 
 [node name="backgroundAnimation" type="Control" parent="."]
+visible = false
 z_index = -1000
 layout_mode = 3
 anchors_preset = 8
