@@ -19,15 +19,18 @@ func fadeOUT():
 
 func changeSceneUI(newScene):
 	fadeIN()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1.5).timeout
 	PlayerUi.reset()
 	PlayerUi.appearUI()
+	await get_tree().create_timer(1.5).timeout
 	#get_tree().call_deferred("change_scene_to_packed", newScene)
 	get_tree().change_scene_to_packed(newScene)
 
 func changeSceneNOUI(newScene):
 	fadeIN()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1.5).timeout
+	PlayerUi.reset()
 	PlayerUi.hideUI()
+	await get_tree().create_timer(1.5).timeout
 	#get_tree().call_deferred("change_scene_to_packed", newScene)
 	get_tree().change_scene_to_packed(newScene)

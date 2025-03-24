@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://fp1jccghjj33"]
+[gd_scene load_steps=24 format=4 uid="uid://fp1jccghjj33"]
 
 [ext_resource type="Script" path="res://scripts/world_test.gd" id="1_mskqx"]
 [ext_resource type="PackedScene" uid="uid://bdxjddcw143ot" path="res://scenes/player.tscn" id="2_7xs0n"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://scripts/present_bundle.gd" id="16_igksu"]
 [ext_resource type="Texture2D" uid="uid://dupvb5mn8b8iq" path="res://sprites/Presents&PickUps/bundleShadow.png" id="17_loiqw"]
 [ext_resource type="Texture2D" uid="uid://bf6osatnqvyum" path="res://sprites/Tiles/Tile Pieces/snow.png" id="20_65ygd"]
+[ext_resource type="Texture2D" uid="uid://d0m5nhnhek2j5" path="res://sprites/Presents&PickUps/snowman.png" id="20_r7qnj"]
 
 [sub_resource type="Environment" id="Environment_cbnsh"]
 background_mode = 3
@@ -109,5 +110,9 @@ texture = ExtResource("20_65ygd")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-72, 206)
+
+[node name="Snowman" type="Sprite2D" parent="."]
+position = Vector2(-94, 187)
+texture = ExtResource("20_r7qnj")
 
 [editable path="ysortedOBJ/player"]

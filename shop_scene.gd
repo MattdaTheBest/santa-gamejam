@@ -16,6 +16,9 @@ extends CanvasLayer
 @onready var info: PanelContainer = $Control/info
 @onready var info_title: PanelContainer = $Control/infoTitle
 @onready var lights: Line2D = $Control/Node2D/lights
+@onready var jaffa: PanelContainer = $Control/jaffa
+@onready var jafalabel: Label = $Control/jaffa/jafalabel
+@onready var sprite_2d: Sprite2D = $Control/jaffa/Sprite2D
 
 var infoTween
 const LIGHT = preload("res://light.tscn")
@@ -29,7 +32,6 @@ var newAmount : int = 1
 
 const SHOP_SCENE_PRESENT = preload("res://shop_scene_present.tscn")
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fadeIN()
@@ -41,10 +43,6 @@ func _ready() -> void:
 
 	scalePanel()
 	
-	
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Control/mainMenu.global_position.y = $Control/Panel.global_position.y + $Control/Panel.size.y - $Control/mainMenu.size.y/2
@@ -56,6 +54,9 @@ func _process(delta: float) -> void:
 
 	passivepanel.global_position.x = $Control/Panel.global_position.x - passivepanel.size.x - 25
 	$Control/passive.global_position = Vector2(passivepanel.global_position.x - ($Control/passive.size.x/2) + passivepanel.size.x/2 ,passivepanel.global_position.y - $Control/passive.size.y/2)
+	
+	jafalabel.text = " Jaffas: " + str(PlayerVariables.playerJaffas) + " "
+	
 	
 func appearInfo(name, info):
 	if infoTween:
@@ -111,8 +112,10 @@ func scalePanel():
 	
 	$Control/exit.global_position.x -=  86 + 25
 	$Control/ToShop.global_position.x += 86 + 25
+	#$Control/jaffa.global_position
 	
 	passivepanel.position.y = -165 -passivepanel.size.y/2 + (275/2)
+	jaffa.position = Vector2($Control/Panel.position.x + 565, -165 - jaffa.size.y/2)
 	
 	new_panel.pivot_offset = new_panel.size/2
 	panel.pivot_offset = panel.size/2
@@ -123,6 +126,7 @@ func scalePanel():
 	$Control/infoTitle.pivot_offset = $Control/infoTitle.size/2
 	$Control/passivepanel.pivot_offset = $Control/passivepanel.size/2
 	$Control/passive.pivot_offset = $Control/passive.size/2
+	$Control/jaffa.pivot_offset = $Control/jaffa.size/2
 	
 	animateFloat($Control/upgradePanel, 4)
 	animateFloat($Control/upgrade, 4)
@@ -135,7 +139,9 @@ func scalePanel():
 	animateFloat($Control/shopsign/H, 8)
 	animateFloat($Control/shopsign/O, 8)
 	animateFloat($Control/shopsign/P, 8)
-	#animateRotation($Control/Panel,1)
+	animateFloat(sprite_2d, 4)
+	animateFloat(jaffa, 4)
+	
 	animateRotation($Control/passive,1)
 	animateRotation($Control/passivepanel,1)
 	animateRotation($Control/newPanel,1)
@@ -148,6 +154,11 @@ func scalePanel():
 	animateRotation($Control/shopsign/P,4)
 	animateRotation(upgrade,4)
 	animateRotation(new,4)
+	animateRotation(sprite_2d, 4)
+	animateRotation(jaffa, 4)
+	
+	print(PlayerVariables.playerCurrLevelJaffas)
+	print(PlayerVariables.playerJaffas)
 	
 	#animateFloat(upgrade, 2)
 	#animateFloat(new, 2)
@@ -164,7 +175,6 @@ func appearShop():
 	
 	tween.parallel().tween_property($Control/Panel, "size:y", 275, .75).set_trans(Tween.TRANS_BACK)
 	tween.parallel().tween_property($Control/Panel, "position:y", -165, .75).set_trans(Tween.TRANS_BACK)
-	
 	
 	tween.set_parallel().tween_property($Control/shopsign/S, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK)
 	tween.set_parallel().tween_property($Control/shopsign/H, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK).set_delay(.25)
@@ -218,7 +228,7 @@ func animateFloat(object, amount):
 	tween.set_loops()
 	
 func animateRotation(object, amount):
-	await get_tree().create_timer(randf_range(0,1.75)).timeout
+	await get_tree().create_timer(randf_range(0,1)).timeout
 	var tween = create_tween()
 	
 	tween.tween_property(object, "rotation_degrees", amount, 2.5).set_ease(Tween.EASE_OUT_IN )

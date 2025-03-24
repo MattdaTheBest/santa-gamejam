@@ -98,10 +98,13 @@ func reset():
 		#
 		#PlayerVariables.playerMoney = 0
 		#
-		
-	if PlayerVariables.playerCurrLevelJaffas > 0:
-		PlayerVariables.playerJaffas += PlayerVariables.playerCurrLevelJaffas
-		PlayerVariables.playerCurrLevelJaffas = 0
+		#
+	#if PlayerVariables.playerCurrLevelJaffas > 0:
+		#PlayerVariables.playerJaffas += PlayerVariables.playerCurrLevelJaffas
+		#PlayerVariables.playerCurrLevelJaffas = 0
+	
+	PlayerVariables.playerJaffas += PlayerVariables.playerCurrLevelJaffas
+	PlayerVariables.playerCurrLevelJaffas = 0
 	
 	moneyBufferValue = 0
 	currentMoney = 0

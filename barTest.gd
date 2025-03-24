@@ -206,7 +206,6 @@ func Appear():
 
 	emptyPiggyBank()
 	
-
 func updatePlayerMoney():
 	
 	playerMoneyLocal = PlayerVariables.playerMoney
@@ -389,7 +388,6 @@ func _on_main_menu_button_mouse_entered() -> void:
 	tweenMenuButton.parallel().tween_property(home_screen_button, "scale", Vector2(1.125,1.125), .15).set_trans(Tween.TRANS_BACK)
 	#tweenMenuButton.parallel().tween_property(home_screen_button, "rotation_degrees", randf_range(-5,5), .15).set_trans(Tween.TRANS_BACK)
 
-
 func _on_main_menu_button_mouse_exited() -> void:
 	if tweenMenuButton:
 		tweenMenuButton.kill()
@@ -398,7 +396,6 @@ func _on_main_menu_button_mouse_exited() -> void:
 	
 	tweenMenuButton.tween_property(home_screen_button, "scale", Vector2(1,1), .05).set_trans(Tween.TRANS_BACK)
 	#tweenMenuButton.parallel().tween_property(home_screen_button, "rotation_degrees", 0, .15).set_trans(Tween.TRANS_BACK)
-
 
 func _on_to_shop_button_mouse_entered() -> void:
 	if tweenShopButton:
@@ -409,7 +406,6 @@ func _on_to_shop_button_mouse_entered() -> void:
 	tweenShopButton.parallel().tween_property(to_shop, "scale", Vector2(1.125,1.125), .15).set_trans(Tween.TRANS_BACK)
 	#tweenShopButton.parallel().tween_property(to_shop, "rotation_degrees", randf_range(-5,5), .15).set_trans(Tween.TRANS_BACK)
 
-
 func _on_to_shop_button_mouse_exited() -> void:
 	if tweenShopButton:
 		tweenShopButton.kill()
@@ -418,7 +414,6 @@ func _on_to_shop_button_mouse_exited() -> void:
 	
 	tweenShopButton.tween_property(to_shop, "scale", Vector2(1,1), .05).set_trans(Tween.TRANS_BACK)
 	#tweenShopButton.parallel().tween_property(to_shop, "rotation_degrees", 0, .15).set_trans(Tween.TRANS_BACK)
-
 
 func _on_exit_button_mouse_entered() -> void:
 	if tweenExitButton:
@@ -429,7 +424,6 @@ func _on_exit_button_mouse_entered() -> void:
 	tweenExitButton.parallel().tween_property(exit, "scale", Vector2(1.125,1.125), .15).set_trans(Tween.TRANS_BACK)
 	#tweenExitButton.parallel().tween_property(exit, "rotation_degrees", randf_range(-5,5), .15).set_trans(Tween.TRANS_BACK)
 
-
 func _on_exit_button_mouse_exited() -> void:
 	if tweenExitButton:
 		tweenExitButton.kill()
@@ -438,7 +432,6 @@ func _on_exit_button_mouse_exited() -> void:
 	
 	tweenExitButton.tween_property(exit, "scale", Vector2(1,1), .05).set_trans(Tween.TRANS_BACK)
 	#tweenExitButton.parallel().tween_property(exit, "rotation_degrees", 0, .15).set_trans(Tween.TRANS_BACK)
-
 
 func _on_main_menu_button_pressed() -> void:
 	#SceneTransition.fadeIN()

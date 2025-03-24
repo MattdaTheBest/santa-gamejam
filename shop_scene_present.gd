@@ -1,5 +1,7 @@
 extends Control
 
+var cost : int = 0 
+
 @onready var panel: Panel = $Panel
 @onready var animated_sprite_2d: AnimatedSprite2D = $Control/AnimatedSprite2D
 
@@ -37,12 +39,13 @@ func _ready() -> void:
 	animateRotation(sold_sign)
 	disappearPanel()
 	
+	cost = randi_range(1,3)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if inPanel and Input.is_action_pressed("leftClick") and not bought and tweenFinished:
+	if inPanel and Input.is_action_pressed("leftClick") and not bought and tweenFinished and PlayerVariables.playerJaffas >= cost:
 		progress_bar.value += 1
 		upgrade.scale = Vector2(1.25 + progress_bar.value/750, 1.25 + progress_bar.value/750)
 		if not newPresent:
@@ -58,7 +61,17 @@ func _process(delta: float) -> void:
 		progress_bar.value -= 1
 	pass
 
+func bumpJaffa():
+	var tween = create_tween()
+	
+	tween.tween_property(get_parent().get_parent().get_parent().jaffa, "scale", Vector2(1.25,1.25), .35).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(get_parent().get_parent().get_parent().jaffa, "scale", Vector2(1,1), .35).set_trans(Tween.TRANS_BACK)
+	
+	pass
+
 func onLevelUp():
+	
+	
 	bought = true
 
 	var tween = create_tween()
@@ -116,13 +129,15 @@ func chooseType(type):
 	if type == "upgrade":
 		presentType = pickNew(unlocked)
 		newPresent = false
+		
+		$upgrade/PresentName.text = "Upgrade: " + str(cost) + " J"
 	elif type == "new":
 		if locked.size() == 0:
 			presentType = null
 		else:
 			presentType = pickUpgrade(locked)
 			newPresent = true
-			$upgrade/PresentName.text = "  Buy: 3 J  "
+			$upgrade/PresentName.text = "  Buy: " + str(cost) + " J  "
 	
 	if presentType != null:	
 		animated_sprite_2d.set_frame_and_progress((randi_range(presentType.get("texture_index")[0],presentType.get("texture_index")[1])), 1)
@@ -148,9 +163,14 @@ func pickNew(from):
 func pickUpgrade(from):
 	return from.pick_random()
 
-func appearPanel():
+func appearPanel():	
 	if tween:
 		tween.kill()
+	
+	if PlayerVariables.playerJaffas < cost:
+		upgrade.modulate = Color.RED
+	else:
+		upgrade.modulate = Color.WHITE
 		
 	tween = create_tween().parallel()
 	if not newPresent:
@@ -223,6 +243,8 @@ func animateRotationLevel(object):
 
 func _on_progress_bar_value_changed(value: float) -> void:
 	if value == 100:
+		bumpJaffa()
+		PlayerVariables.playerJaffas -= cost
 		var temp = PresentStats.list.find(presentTypeFinal)
 		if temp != -1:
 			bought = true
