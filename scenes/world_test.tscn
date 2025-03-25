@@ -112,7 +112,8 @@ texture = ExtResource("20_65ygd")
 position = Vector2(-72, 206)
 
 [node name="Snowman" type="Sprite2D" parent="."]
-position = Vector2(-94, 187)
+visible = false
+position = Vector2(-95, 191)
 texture = ExtResource("20_r7qnj")
 
 [editable path="ysortedOBJ/player"]

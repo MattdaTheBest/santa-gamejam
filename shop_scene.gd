@@ -18,7 +18,7 @@ extends CanvasLayer
 @onready var lights: Line2D = $Control/Node2D/lights
 @onready var jaffa: PanelContainer = $Control/jaffa
 @onready var jafalabel: Label = $Control/jaffa/jafalabel
-@onready var sprite_2d: Sprite2D = $Control/jaffa/Sprite2D
+@onready var sprite_2d: Sprite2D = $Control/Sprite2D
 
 var infoTween
 const LIGHT = preload("res://light.tscn")
@@ -55,8 +55,10 @@ func _process(delta: float) -> void:
 	passivepanel.global_position.x = $Control/Panel.global_position.x - passivepanel.size.x - 25
 	$Control/passive.global_position = Vector2(passivepanel.global_position.x - ($Control/passive.size.x/2) + passivepanel.size.x/2 ,passivepanel.global_position.y - $Control/passive.size.y/2)
 	
-	jafalabel.text = " Jaffas: " + str(PlayerVariables.playerJaffas) + " "
+	jafalabel.text = "   Jaffas: " + str(PlayerVariables.playerJaffas) + " "
 	
+	$Control/info.visible = !($Control/info.scale.y <= 0.01)
+	$Control/infoTitle.visible = !($Control/infoTitle.scale.y <= 0.01)
 	
 func appearInfo(name, info):
 	if infoTween:
@@ -115,7 +117,8 @@ func scalePanel():
 	#$Control/jaffa.global_position
 	
 	passivepanel.position.y = -165 -passivepanel.size.y/2 + (275/2)
-	jaffa.position = Vector2($Control/Panel.position.x + 565, -165 - jaffa.size.y/2)
+	jaffa.position = Vector2($Control/Panel.position.x + 555, -165 - jaffa.size.y/2)
+	sprite_2d.position = Vector2(jaffa.position.x - 12.5, jaffa.position.y + 12.5)
 	
 	new_panel.pivot_offset = new_panel.size/2
 	panel.pivot_offset = panel.size/2
@@ -180,6 +183,9 @@ func appearShop():
 	tween.set_parallel().tween_property($Control/shopsign/H, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK).set_delay(.25)
 	tween.set_parallel().tween_property($Control/shopsign/O, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK).set_delay(.45)
 	tween.set_parallel().tween_property($Control/shopsign/P, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK).set_delay(.65)
+	tween.set_parallel().tween_property(sprite_2d, "scale", Vector2(5,5), .55).set_trans(Tween.TRANS_BACK).set_delay(.85)
+	tween.set_parallel().tween_property($Control/jaffa, "scale:x", 1, .55).set_trans(Tween.TRANS_BACK).set_delay(1.05)
+	
 	
 	tween.set_parallel().tween_property(panel, "scale:y", 1, .55).set_trans(Tween.TRANS_BACK)
 	tween.set_parallel().tween_property($Control/passivepanel, "scale:y", 1, .75).set_trans(Tween.TRANS_BACK)
@@ -190,6 +196,11 @@ func appearShop():
 	
 	tween.set_parallel().tween_property(h_box_container, "scale:y", 1, .35).set_trans(Tween.TRANS_BACK).set_delay(.5)
 	tween.set_parallel().tween_property(new_h_box_container, "scale:y", 1, .35).set_trans(Tween.TRANS_BACK).set_delay(.5)
+	
+	
+	
+	
+	
 	
 	tween.tween_property($Control/mainMenu, "scale", Vector2(1,1), .55).set_trans(Tween.TRANS_BACK).set_delay(.75)
 	tween.parallel().tween_property($Control/ToShop, "scale", Vector2(1,1), .55).set_trans(Tween.TRANS_BACK).set_delay(1.25)

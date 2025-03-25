@@ -584,6 +584,12 @@ grow_vertical = 2
 scale = Vector2(1, 1e-05)
 theme_override_styles/panel = SubResource("StyleBoxFlat_sa76s")
 
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+z_index = 60
+position = Vector2(-29.995, 306)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("4_n607k")
+
 [node name="jaffa" type="PanelContainer" parent="Control"]
 z_index = 50
 z_as_relative = false
@@ -599,13 +605,9 @@ offset_right = 12.0
 offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1)
 pivot_offset = Vector2(40, 14)
 theme_override_styles/panel = SubResource("StyleBoxFlat_wrrq6")
-
-[node name="Sprite2D" type="Sprite2D" parent="Control/jaffa"]
-position = Vector2(-17, 14)
-scale = Vector2(5, 5)
-texture = ExtResource("4_n607k")
 
 [node name="jafalabel" type="Label" parent="Control/jaffa"]
 layout_mode = 2

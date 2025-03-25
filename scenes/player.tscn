@@ -257,6 +257,8 @@ radius = 7.0
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+motion_mode = 1
+wall_min_slide_angle = 0.0872665
 script = ExtResource("1_1k0tf")
 
 [node name="shadow" type="AnimatedSprite2D" parent="."]
@@ -326,6 +328,12 @@ texture = ExtResource("5_68r46")
 texture_mode = 1
 
 [node name="playerMoneyLossTimer" type="Timer" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(10, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+target_position = Vector2(-10, 0)
 
 [connection signal="area_entered" from="interact_area" to="." method="_on_interact_area_area_entered"]
 [connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]

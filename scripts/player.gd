@@ -40,7 +40,8 @@ func _physics_process(delta: float) -> void:#
 	#cash.text = str(playerMoney)
 	#print(presentList.size())
 
-
+	$RayCast2D.rotation_degrees = currRotation
+	$RayCast2D2.rotation_degrees = currRotation
 		
 	shot_power.value = shotPower
 	
@@ -97,7 +98,9 @@ func _physics_process(delta: float) -> void:#
 
 	updateSpriteAngle()
 	velocity = currentSpeed * direction 
-	move_and_slide()
+	if move_and_slide():
+		if get_slide_collision_count() > 0 and ($RayCast2D.is_colliding() or $RayCast2D2.is_colliding()):
+			currentSpeed = -currentSpeed/2
 	updateTrail()
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
@@ -201,7 +204,7 @@ func updateTrail():
 	if velocity != Vector2(0,0):
 		snow_trail.add_point(global_position)
 		
-	snow_trail.rotation_degrees = rotation_degrees
+	#snow_trail.rotation_degrees = rotation_degrees
 
 func _on_player_money_loss_timer_timeout() -> void:
 	if not PlayerVariables.pauseMoneyLoss:
