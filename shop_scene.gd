@@ -160,8 +160,8 @@ func scalePanel():
 	animateRotation(sprite_2d, 4)
 	animateRotation(jaffa, 4)
 	
-	print(PlayerVariables.playerCurrLevelJaffas)
-	print(PlayerVariables.playerJaffas)
+	#print(PlayerVariables.playerCurrLevelJaffas)
+	#print(PlayerVariables.playerJaffas)
 	
 	#animateFloat(upgrade, 2)
 	#animateFloat(new, 2)

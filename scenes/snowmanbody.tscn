@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://boffq4gyqyogx"]
+
+[ext_resource type="Texture2D" uid="uid://dt47nwdhm7nns" path="res://sprites/Tiles/Tile Pieces/mrsnowmanbody.png" id="1_4fxsu"]
+[ext_resource type="Script" path="res://scenes/snowmanbody.gd" id="1_obyyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tb48g"]
+radius = 3.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7vepo"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 5
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_obyyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tb48g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4fxsu")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+top_level = true
+process_material = SubResource("ParticleProcessMaterial_7vepo")

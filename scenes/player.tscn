@@ -275,7 +275,7 @@ frame_progress = 0.315757
 
 [node name="Camera2D" type="Camera2D" parent="."]
 y_sort_enabled = true
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0

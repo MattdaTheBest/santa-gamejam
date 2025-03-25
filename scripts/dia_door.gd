@@ -11,7 +11,8 @@ const WRONG_PRESENT_PARTICLE = preload("res://scenes/Buildings/TileMaps/tilemap 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	call_deferred("setDoorSpecfic")
+	#call_deferred("setDoorSpecfic")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,17 +22,17 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("present"):
-		if (colorSpecfic and (body.presentactual.frame == color or body.presentactual.frame == 8)) or (not colorSpecfic):
+		if (colorSpecfic and (body.presentactual.frame == color or body.presentactual.frame == 8)) or (not colorSpecfic) and not body.is_in_group("uselessPresents"):
+			print(body.presentType)
 			remove_from_group("door")
-			get_node("/root/world").findDoors()
-			body.call_deferred("free")	
+			get_tree().get_nodes_in_group("Level")[0].findDoors()	
 			area_2d.set_deferred("monitoring", false)
 			cash_spawner.call_deferred("spawnCash", body.presentMoneyReward, body.presentJaffaReward)
 			set_frame_and_progress(2,1)
 			emitParticles()
+			body.call_deferred("free")
 		else:
 			var particle = WRONG_PRESENT_PARTICLE.instantiate()
-			particle.position = cash_spawner.position
 			add_child(particle)
 
 func setDoorSpecfic():	

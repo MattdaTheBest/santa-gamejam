@@ -29,6 +29,7 @@ const VOID_PARTICLES = preload("res://void_particles.tscn")
 const RAINBOW_TRAIL = preload("res://rainbow_trail.tscn")
 var parcticle
 
+@export var presentTypeCount : int = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -121,7 +122,7 @@ func spawnBasic():
 	animation_player.advance(randf_range(0,2.5))
 		
 func spawnRare():
-	var present_type = randi_range(1,6)
+	var present_type = randi_range(1,presentTypeCount)
 	if present_type == 1 and PresentStats.goldPresent.get("Unlocked") == true:
 		setPresentStats(PresentStats.newGold())
 	elif present_type == 2 and PresentStats.jaffaPresent.get("Unlocked") == true:
@@ -141,6 +142,12 @@ func spawnRare():
 		parcticle = VOID_PARTICLES.instantiate()
 		add_child(parcticle)
 		parcticle.setPresentActual(presentactual)
+	elif present_type == 7 and PresentStats.snowmanPresent.get("Unlocked") == true:
+		setPresentStats(PresentStats.newSnowman())
+		add_to_group("uselessPresents")
+	elif present_type == 8 and PresentStats.snowmanPresent.get("Unlocked") == true:
+		setPresentStats(PresentStats.newCoal())
+		add_to_group("uselessPresents")
 	else:
 		spawnRare()
 		

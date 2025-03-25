@@ -14,7 +14,6 @@ var endTime : Dictionary
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	call_deferred("findDoors")	
-	startTime = Time.get_time_dict_from_system()
 	SceneTransition.fadeOUT()
 	pass # Replace with function body.
 
@@ -29,18 +28,8 @@ func _process(delta: float) -> void:
 	if doorCount == 0 and not doorsGone:
 		doorsGone = true
 		
-		endTime = Time.get_time_dict_from_system()
-
-		var minute = int(Time.get_time_dict_from_system().minute) - int(startTime.minute)
-		var second = int(Time.get_time_dict_from_system().second) - int(startTime.second)
-
-		if second < 10:
-			second = "0" + str(second)
-		
-		if minute < 10:
-			minute = "0" + str(minute)
-		print((str(minute) + ":" + str(second)))
-		PlayerVariables.playerCurrLevelTime = (str(minute) + ":" + str(second))
+		PlayerUi.timer_2.stop()
+		PlayerVariables.playerCurrLevelTime = (str(PlayerUi.timer_2.time_minutes) + ":" + str(PlayerUi.timer_2.time_seconds))
 		PlayerUi.openEndScreen()
 		
 
@@ -52,4 +41,5 @@ func findDoors():
 			
 	doorCount = doors
 	PlayerUi.setDoors(doorCount)
+	PlayerUi.timer_2.start()
 	

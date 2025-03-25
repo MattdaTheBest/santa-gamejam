@@ -22,6 +22,7 @@ PresentStats="*res://scripts/AutoLoads/PresentStats.gd"
 SceneTransition="*res://sceneTransition.tscn"
 PlayerUi="*res://scenes/player_ui.tscn"
 PresentUpgradeVariables="*res://scripts/AutoLoads/presentUpgradeVariables.gd"
+Crtshader="*res://crtshader.tscn"
 
 [display]
 
@@ -36,6 +37,7 @@ cash=""
 door=""
 jaffa=""
 Level=""
+uselessPresents=""
 
 [input]
 

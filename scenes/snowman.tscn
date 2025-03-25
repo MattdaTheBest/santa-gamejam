@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqklu1pu4stci"]
+
+[ext_resource type="Texture2D" uid="uid://bkd4muvxj747p" path="res://sprites/Tiles/Tile Pieces/mersnowmanhead.png" id="1_54kmm"]
+[ext_resource type="Texture2D" uid="uid://b1ockyu5mcox" path="res://sprites/Tiles/Tile Pieces/mrsnowmanbottom.png" id="3_ntru6"]
+
+[node name="Snowman" type="Node2D"]
+
+[node name="head" type="Sprite2D" parent="."]
+position = Vector2(0, -7.5)
+texture = ExtResource("1_54kmm")
+
+[node name="base" type="Sprite2D" parent="."]
+texture = ExtResource("3_ntru6")

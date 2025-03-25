@@ -150,6 +150,34 @@ var voidPresent = {
 	"info" : "Straight from the void! This present wont take up any space in your present trail!"
 }
 
+var snowmanPresent = {
+	"name" : "Snowman Head",
+	"ID" : "snowman",
+	"StatID" : "snowman",
+	"Unlocked" : true,
+	"Level" : null,
+	"texture_index" : [12,12],
+	"mass" : null,
+	"reward_money" : null,
+	"reward_jaffa" : null,
+	"info" : null,
+	"useless" : true
+}
+
+var coalPresent = {
+	"name" : "Chunk of Coal",
+	"ID" : "coal",
+	"StatID" : "coal",
+	"Unlocked" : true,
+	"Level" : null,
+	"texture_index" : [13,13],
+	"mass" : null,
+	"reward_money" : null,
+	"reward_jaffa" : null,
+	"info" : null,
+	"useless" : true
+}
+
 var list = []
 
 # Called when the node enters the scene tree for the first time.
@@ -182,6 +210,10 @@ func updateStats(pType, values):
 			boomarangPresent.merge(values, true)
 		elif pType == "void":
 			voidPresent.merge(values, true)
+		elif pType == "snowman":
+			snowmanPresent.merge(values, true)
+		elif pType == "coal":
+			coalPresent.merge(values, true)
 
 func updateList():
 	list.clear()
@@ -197,6 +229,7 @@ func updateList():
 	list.append(bouncyPresent)
 	list.append(boomarangPresent)
 	list.append(voidPresent)
+	#list.append(snowmanPresent)
 	
 func get_random(range_L, range_H):
 	return randi_range(range_L, range_H)
@@ -338,6 +371,28 @@ func newVoid(): #TO DO
 		"mass" : 0,
 		"reward_money" : randi_range(voidPresent.get("reward_money")[0],voidPresent.get("reward_money")[1]),
 		"reward_jaffa" : randi_range(voidPresent.get("reward_jaffa")[0],voidPresent.get("reward_jaffa")[1])
+	}
+	
+	return basic
+	
+func newSnowman(): #TO DO
+	var basic = {
+		"name" : "Snowman Head",
+		"texture_index" : 12,
+		"mass" : 0,
+		"reward_money" : 0,
+		"reward_jaffa" : 0
+	}
+	
+	return basic
+	
+func newCoal(): #TO DO
+	var basic = {
+		"name" : "Chunk of Coal",
+		"texture_index" : 13,
+		"mass" : 0,
+		"reward_money" : 0,
+		"reward_jaffa" : 0
 	}
 	
 	return basic

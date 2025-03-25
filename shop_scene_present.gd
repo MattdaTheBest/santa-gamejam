@@ -64,10 +64,11 @@ func _process(delta: float) -> void:
 func bumpJaffa():
 	var tween = create_tween()
 	
-	tween.tween_property(get_parent().get_parent().get_parent().jaffa, "scale", Vector2(1.25,1.25), .35).set_trans(Tween.TRANS_BACK)
-	tween.tween_property(get_parent().get_parent().get_parent().jaffa, "scale", Vector2(1,1), .35).set_trans(Tween.TRANS_BACK)
+	tween.set_parallel().tween_property(get_parent().get_parent().get_parent().jaffa, "scale", Vector2(1.25,1.25), .35).set_trans(Tween.TRANS_BACK)
+	tween.set_parallel().tween_property(get_parent().get_parent().get_parent().sprite_2d, "scale", Vector2(6,6), .35).set_trans(Tween.TRANS_BACK)
 	
-	pass
+	tween.set_parallel().tween_property(get_parent().get_parent().get_parent().jaffa, "scale", Vector2(1,1), .35).set_trans(Tween.TRANS_BACK).set_delay(.35)
+	tween.set_parallel().tween_property(get_parent().get_parent().get_parent().sprite_2d, "scale", Vector2(5,5), .35).set_trans(Tween.TRANS_BACK).set_delay(.35)
 
 func onLevelUp():
 	

@@ -32,6 +32,9 @@ var currentJaffas = 0
 @onready var label_doors_left: Label = $Control/doorUI/DoorsLeft/LabelDoorsLeft
 @onready var ui_door: Sprite2D = $Control/doorUI/UiDoor
 
+@onready var timer_2: Control = $Control/timer2
+
+
 var piggyBankTween : Tween
 
 var uiPresentsList = []
@@ -52,6 +55,7 @@ func _ready() -> void:
 	animatePiggyBank()
 	await get_tree().create_timer(randf_range(0,1)).timeout
 	animateDoorUI()
+	animateTimerUI()
 	await get_tree().create_timer(.5).timeout
 	
 	#scene_transition.call_deferred("fadeOUT")
@@ -105,6 +109,7 @@ func reset():
 	
 	PlayerVariables.playerJaffas += PlayerVariables.playerCurrLevelJaffas
 	PlayerVariables.playerCurrLevelJaffas = 0
+	timer_2.reset()
 	
 	moneyBufferValue = 0
 	currentMoney = 0
@@ -136,7 +141,22 @@ func openEndScreen():
 	var popUp = END_SCREEN_UI.instantiate()
 	add_child(popUp)
 	popUp.openEndScreen()
+
+func animateTimerUI():
+	var tween = create_tween()
+	var random_up = randf_range(-5,-1)
+	var random_down = -random_up
+	var random_rotation = randf_range(5,0)
 	
+	#tween.parallel().tween_property(doors_left,"position:y", doors_left.position.y - random_up,2).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property(timer_2,"position:y", timer_2.position.y - random_up,2).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property(timer_2, "rotation_degrees", random_rotation,1.5).set_ease(Tween.EASE_IN)
+	#tween.parallel().tween_property(doors_left,"position:y", doors_left.position.y - random_down,1.25).set_delay(2)	
+	tween.parallel().tween_property(timer_2,"position:y", timer_2.position.y - random_down,1.25).set_delay(2)
+	tween.parallel().tween_property(timer_2, "rotation_degrees", -random_rotation,1.5).set_delay(1.5).set_ease(Tween.EASE_IN)
+
+	
+	tween.set_loops()		
 func animateDoorUI():
 	var tween = create_tween()
 	var random_up = randf_range(-5,-1)
