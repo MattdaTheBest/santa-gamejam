@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/basic_building.gd" id="1_l4ivg"]
 [ext_resource type="TileSet" uid="uid://dsk05kendeeho" path="res://scenes/Buildings/TileMaps/BackTiles.tres" id="2_8wcpg"]
 [ext_resource type="TileSet" uid="uid://bgy4yfv2xjgte" path="res://scenes/Buildings/TileMaps/BlueBrickFrontTiles.tres" id="3_omrdk"]
-[ext_resource type="Texture2D" uid="uid://d3608kh17ukwd" path="res://sprites/Tiles/snowBuildingEdgeTiles.png" id="4_ds457"]
+[ext_resource type="Texture2D" uid="uid://drypi2i6cktdn" path="res://sprites/Tiles/snowBuildingEdgeTiles.png" id="4_ds457"]
 [ext_resource type="TileSet" uid="uid://df73tot003u12" path="res://scenes/Buildings/TileMaps/snowTopTiles.tres" id="4_qyi02"]
 [ext_resource type="TileSet" uid="uid://drxobj2iqbjfk" path="res://scenes/Buildings/TileMaps/extrasTileSet.tres" id="5_eul20"]
 [ext_resource type="Script" path="res://scripts/snowSpawnArea.gd" id="6_xjbuj"]

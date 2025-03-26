@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drypi2i6cktdn"
-path="res://.godot/imported/snowBuildingEdgeTiles.png-13f7c699b70332842b6b2a304933535c.ctex"
+uid="uid://cp6fjhm7fjlkb"
+path="res://.godot/imported/piggyBank.png-460558f8b0e1d03583d652fce969f1c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tiles/snowBuildingEdgeTiles.png"
-dest_files=["res://.godot/imported/snowBuildingEdgeTiles.png-13f7c699b70332842b6b2a304933535c.ctex"]
+source_file="res://sprites/piggyBank.png"
+dest_files=["res://.godot/imported/piggyBank.png-460558f8b0e1d03583d652fce969f1c5.ctex"]
 
 [params]
 

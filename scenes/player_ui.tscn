@@ -292,6 +292,9 @@ theme_override_fonts/font = ExtResource("2_2kgua")
 text = "4/5
 "
 
+[node name="moneyCountDownTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Control/moneyUI/LabelAddedMoney/moneyBufferTimer" to="." method="_on_money_buffer_timer_timeout"]
 [connection signal="timeout" from="Control/moneyUI/LabelAddedJaffas/jaffaBufferTimer" to="." method="_on_money_buffer_timer_timeout"]
 [connection signal="timeout" from="Control/moneyUI/LabelAddedJaffas/jaffaBufferTimer" to="." method="_on_jaffa_buffer_timer_timeout"]
+[connection signal="timeout" from="moneyCountDownTimer" to="." method="_on_money_count_down_timer_timeout"]

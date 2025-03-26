@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://vjtswv8pd3yq"]
+[gd_scene load_steps=4 format=3 uid="uid://vjtswv8pd3yq"]
 
 [ext_resource type="Shader" path="res://scenes/world_test.gdshader" id="1_sggwj"]
 
@@ -6,10 +6,10 @@
 shader = ExtResource("1_sggwj")
 shader_parameter/resolution = Vector2(1152, 648)
 shader_parameter/scan_line_amount = 0.1
-shader_parameter/warp_amount = 0.75
+shader_parameter/warp_amount = 0.5
 shader_parameter/noise_amount = 0.03
 shader_parameter/interference_amount = 0.2
-shader_parameter/grille_amount = 0.05
+shader_parameter/grille_amount = 0.1
 shader_parameter/grille_size = 1.0
 shader_parameter/vignette_amount = 1.0
 shader_parameter/vignette_intensity = 0.35
@@ -17,7 +17,14 @@ shader_parameter/aberation_amount = 0.5
 shader_parameter/roll_line_amount = 0.3
 shader_parameter/roll_speed = 3.8e-07
 shader_parameter/scan_line_strength = -3.0
-shader_parameter/pixel_strength = -4.0
+shader_parameter/pixel_strength = 0.0
+
+[sub_resource type="Environment" id="Environment_nuil2"]
+background_mode = 3
+tonemap_mode = 2
+tonemap_exposure = 0.35
+glow_enabled = true
+glow_intensity = 8.0
 
 [node name="crtshader" type="CanvasLayer"]
 layer = 128
@@ -32,3 +39,6 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 mouse_filter = 2
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nuil2")

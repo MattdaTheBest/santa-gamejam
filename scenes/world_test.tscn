@@ -17,13 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://c3kr3l3lhpg0w" path="res://sprites/Presents&PickUps/presentBundle.png" id="15_1kemb"]
 [ext_resource type="PackedScene" uid="uid://j1l0ctfnmr85" path="res://scenes/present.tscn" id="15_ypke4"]
 [ext_resource type="Script" path="res://scripts/present_bundle.gd" id="16_igksu"]
+[ext_resource type="PackedScene" uid="uid://bioeala4kvcvy" path="res://stringlights.tscn" id="16_xfkg0"]
 [ext_resource type="Texture2D" uid="uid://dupvb5mn8b8iq" path="res://sprites/Presents&PickUps/bundleShadow.png" id="17_loiqw"]
 [ext_resource type="Texture2D" uid="uid://bf6osatnqvyum" path="res://sprites/Tiles/Tile Pieces/snow.png" id="20_65ygd"]
 [ext_resource type="PackedScene" uid="uid://cqklu1pu4stci" path="res://scenes/snowman.tscn" id="20_oxqvq"]
 [ext_resource type="PackedScene" uid="uid://boffq4gyqyogx" path="res://scenes/snowmanbody.tscn" id="21_bcpds"]
-
-[sub_resource type="Environment" id="Environment_cbnsh"]
-background_mode = 3
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_u07f8"]
 scenes/1/scene = ExtResource("5_qqm1j")
@@ -44,9 +42,6 @@ sources/0 = SubResource("TileSetScenesCollectionSource_u07f8")
 [node name="world" type="Node2D" groups=["Level"]]
 script = ExtResource("1_mskqx")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_cbnsh")
-
 [node name="ysortedOBJ" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -55,7 +50,7 @@ position = Vector2(-50, 197)
 
 [node name="buildings" type="TileMapLayer" parent="ysortedOBJ"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD7/wcAAAAAAAAACwD7/woAAAAAAAAAAwD0/wkAAAAAAAAABgACAAwAAAAAAAAACADw/wkAAAAAAAAACgAJAA4AAAAAAAAACwD+/xUAAAAAAAAACQDv/w4AAAAAAAAACAACABQAAAAAAAAABgD1/xQAAAAAAAAACADx/xUAAAAAAAAABgDp/wkAAAAAAAAACwDy/wMAAAAAAAAACQA=")
+tile_map_data = PackedByteArray("AAD7/wcAAAAAAAAACwD0/wkAAAAAAAAABgACAAwAAAAAAAAACADw/wkAAAAAAAAACgAJAA4AAAAAAAAACwD+/xUAAAAAAAAACQDv/w4AAAAAAAAACAACABQAAAAAAAAABgD1/xQAAAAAAAAACADx/xUAAAAAAAAABgDp/wkAAAAAAAAACwDy/wMAAAAAAAAACQD7/woAAAAAAAAAAwA=")
 tile_set = SubResource("TileSet_820yl")
 
 [node name="presents" type="Node2D" parent="ysortedOBJ"]
@@ -88,6 +83,36 @@ position = Vector2(-103, 220)
 
 [node name="Present39" parent="ysortedOBJ/presents" instance=ExtResource("15_ypke4")]
 position = Vector2(-111, 234)
+
+[node name="Marker2D4" type="Marker2D" parent="ysortedOBJ"]
+position = Vector2(-48, 137)
+
+[node name="Marker2D5" type="Marker2D" parent="ysortedOBJ"]
+position = Vector2(-14, 171)
+
+[node name="Marker2D6" type="Marker2D" parent="ysortedOBJ"]
+position = Vector2(31, 176)
+
+[node name="stringlights2" parent="ysortedOBJ" node_paths=PackedStringArray("a", "b", "c") instance=ExtResource("16_xfkg0")]
+position = Vector2(-320, 306)
+a = NodePath("../Marker2D4")
+b = NodePath("../Marker2D5")
+c = NodePath("../Marker2D6")
+
+[node name="Marker2D" type="Marker2D" parent="ysortedOBJ"]
+position = Vector2(-160, 153)
+
+[node name="Marker2D2" type="Marker2D" parent="ysortedOBJ"]
+position = Vector2(-119, 152)
+
+[node name="Marker2D3" type="Marker2D" parent="ysortedOBJ"]
+position = Vector2(-96, 137)
+
+[node name="stringlights" parent="ysortedOBJ" node_paths=PackedStringArray("a", "b", "c") instance=ExtResource("16_xfkg0")]
+position = Vector2(-160, 153)
+a = NodePath("../Marker2D")
+b = NodePath("../Marker2D2")
+c = NodePath("../Marker2D3")
 
 [node name="PresentBundle" type="Sprite2D" parent="."]
 visible = false

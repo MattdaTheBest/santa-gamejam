@@ -33,6 +33,7 @@ var currentJaffas = 0
 @onready var ui_door: Sprite2D = $Control/doorUI/UiDoor
 
 @onready var timer_2: Control = $Control/timer2
+@onready var money_count_down_timer: Timer = $moneyCountDownTimer
 
 
 var piggyBankTween : Tween
@@ -76,8 +77,11 @@ func _process(delta: float) -> void:
 	
 	#print(PlayerVariables.presentList)
 		
-	#if Input.is_action_just_pressed("spacebar"):
-		#openEndScreen()	
+	if Input.is_action_just_pressed("spacebar"):
+		if Input.is_action_pressed("shift"):
+			SceneTransition.fadeOUT()
+		else:
+			SceneTransition.fadeIN(randi_range(0,6))	
 		
 	#print(LevelComplete.size())
 
@@ -393,3 +397,9 @@ func _on_money_buffer_timer_timeout() -> void:
 
 func _on_jaffa_buffer_timer_timeout() -> void:
 	countDownJaffas()
+
+func _on_money_count_down_timer_timeout() -> void:
+	if not PlayerVariables.pauseMoneyLoss:
+		PlayerVariables.playerMoney -= 1
+		PlayerUi.cash.text = str(PlayerVariables.playerMoney)
+		PlayerUi.updateMoneyDirectAmount()

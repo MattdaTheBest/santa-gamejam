@@ -13,10 +13,10 @@ var endTime : Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	call_deferred("findDoors")	
+	call_deferred("findDoors")
+	start_lvl()	
 	SceneTransition.fadeOUT()
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,10 +29,9 @@ func _process(delta: float) -> void:
 		doorsGone = true
 		
 		PlayerUi.timer_2.stop()
-		PlayerVariables.playerCurrLevelTime = (str(PlayerUi.timer_2.time_minutes) + ":" + str(PlayerUi.timer_2.time_seconds))
+		PlayerVariables.playerCurrLevelTime = (str(int(PlayerUi.timer_2.time_minutes/3)) + ":" + str(PlayerUi.timer_2.time_seconds%60))
 		PlayerUi.openEndScreen()
 		
-
 func findDoors():
 	var doors : int
 	for n in buildings.get_children():
@@ -41,5 +40,9 @@ func findDoors():
 			
 	doorCount = doors
 	PlayerUi.setDoors(doorCount)
+
+func start_lvl():
+	await get_tree().create_timer(1).timeout
+	PlayerVariables.pauseMoneyLoss = false
+	PlayerUi.money_count_down_timer.start(1)
 	PlayerUi.timer_2.start()
-	

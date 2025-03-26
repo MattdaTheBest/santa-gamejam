@@ -89,7 +89,6 @@ func updateBuffers():
 	var updatedStats
 	if newPresent:
 		updatedStats = PresentUpgradeVariables.returnStats(sType, [0])
-		print(updatedStats)
 	else:
 		updatedStats = PresentUpgradeVariables.returnStats(sType, present.get("Level"))	
 		

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bioeala4kvcvy"]
+
+[ext_resource type="Script" path="res://stringlights.gd" id="1_7wkn3"]
+[ext_resource type="Texture2D" uid="uid://blbwku2n1dxet" path="res://sprites/UI/ROPE.png" id="2_jj56r"]
+
+[node name="lights" type="Line2D"]
+z_index = 10
+y_sort_enabled = true
+width = 1.0
+texture = ExtResource("2_jj56r")
+texture_mode = 1
+script = ExtResource("1_7wkn3")

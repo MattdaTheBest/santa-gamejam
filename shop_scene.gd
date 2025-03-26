@@ -1,4 +1,5 @@
 extends CanvasLayer
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
 @onready var background_animation: Control = $backgroundAnimation
 @onready var Anni_h_box_container: HBoxContainer = $backgroundAnimation/HBoxContainer
@@ -36,12 +37,13 @@ const SHOP_SCENE_PRESENT = preload("res://shop_scene_present.tscn")
 func _ready() -> void:
 	fadeIN()
 	await get_tree().create_timer(1).timeout
-	SceneTransition.fadeOUT()
+	SceneTransition.fadeOUT(randi_range(0,5))
 	spawnUpgrades()
 	spawnNew()
 	PlayerUi.hideUI()
 
 	scalePanel()
+	gpu_particles_2d.emitting = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -79,7 +81,6 @@ func disappearInfo():
 	if infoTween:
 		infoTween.kill()
 		
-
 	infoTween = create_tween()
 	
 	infoTween.tween_property($Control/infoTitle, "scale", Vector2(1,0), .15)
@@ -175,6 +176,8 @@ func appearShop():
 	
 	#tween.tween_property($Control/Panel, "position:y", -165, .35)
 	#tween.tween_property($Control/Panel, "size:y", 350, .35)
+	
+	#size: 0,0 position 0,0
 	
 	tween.parallel().tween_property($Control/Panel, "size:y", 275, .75).set_trans(Tween.TRANS_BACK)
 	tween.parallel().tween_property($Control/Panel, "position:y", -165, .75).set_trans(Tween.TRANS_BACK)

@@ -14,22 +14,22 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func fadeIn():
-	animated_sprite_2d_2.set_frame_and_progress(randi_range(0,8), 1)
+		
+func fadeIn(wait):
+	animated_sprite_2d_2.set_frame_and_progress(randi_range(0,6), 1)
 	animated_sprite_2d_2.rotation_degrees = randf_range(-8,8)
 	
 	if randi_range(0,1) == 1:
 		z_index += 1
 	
-	await get_tree().create_timer(randf_range(0.01, 0.75)).timeout
+	await get_tree().create_timer(wait).timeout
 	
 	var tween = create_tween()
 	var addition = randf_range(0, 1)
-	tween.tween_property(animated_sprite_2d_2, "scale", Vector2(4 + addition,4 + addition), randf_range(0.25,0.55))
-	
-func fadeOut():
-	await get_tree().create_timer(randf_range(0.01, 0.75)).timeout
+	tween.tween_property(animated_sprite_2d_2, "scale", Vector2(4,4), .25)
+
+func fadeOut(wait):
+	await get_tree().create_timer(wait).timeout
 	
 	var tween = create_tween()
 	

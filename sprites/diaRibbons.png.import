@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drypi2i6cktdn"
-path="res://.godot/imported/snowBuildingEdgeTiles.png-13f7c699b70332842b6b2a304933535c.ctex"
+uid="uid://ddv1s3ph7nu85"
+path="res://.godot/imported/diaRibbons.png-31b5a29a16940a22a81f72bc88485f51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tiles/snowBuildingEdgeTiles.png"
-dest_files=["res://.godot/imported/snowBuildingEdgeTiles.png-13f7c699b70332842b6b2a304933535c.ctex"]
+source_file="res://sprites/diaRibbons.png"
+dest_files=["res://.godot/imported/diaRibbons.png-31b5a29a16940a22a81f72bc88485f51.ctex"]
 
 [params]
 

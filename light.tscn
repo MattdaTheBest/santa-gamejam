@@ -7,7 +7,7 @@
 
 [node name="LIGHT" type="Node2D"]
 z_index = 1000
-scale = Vector2(4, 4)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_chp5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

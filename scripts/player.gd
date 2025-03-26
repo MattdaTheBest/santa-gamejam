@@ -35,7 +35,6 @@ func _ready() -> void:
 	call_deferred("setUpValues")
 	pass
 	
-
 func _physics_process(delta: float) -> void:#
 	#cash.text = str(playerMoney)
 	#print(presentList.size())
@@ -118,9 +117,7 @@ func _on_interact_area_area_entered(area: Area2D) -> void:
 			
 			PlayerVariables.presentList.append(present)
 			PlayerUi.addPresent(present.presentactual.frame, PlayerVariables.maxTrailSize - PlayerVariables.presentList.find(present), present,present.presentType )
-			
-		
-		
+				
 func shootPresent(power):
 	var present = PlayerVariables.presentList[0]
 	PlayerVariables.presentList.remove_at(0)
@@ -205,12 +202,6 @@ func updateTrail():
 		snow_trail.add_point(global_position)
 		
 	#snow_trail.rotation_degrees = rotation_degrees
-
-func _on_player_money_loss_timer_timeout() -> void:
-	if not PlayerVariables.pauseMoneyLoss:
-		PlayerVariables.playerMoney -= 1
-		PlayerUi.cash.text = str(PlayerVariables.playerMoney)
-		PlayerUi.updateMoneyDirectAmount()
 
 func setUpValues():
 	PlayerVariables.maxTrailSize = PlayerVariables.christmasCheetLVL + 1
