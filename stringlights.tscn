@@ -9,4 +9,5 @@ y_sort_enabled = true
 width = 1.0
 texture = ExtResource("2_jj56r")
 texture_mode = 1
+joint_mode = 2
 script = ExtResource("1_7wkn3")

@@ -209,7 +209,7 @@ func appearShop():
 	tween.parallel().tween_property($Control/ToShop, "scale", Vector2(1,1), .55).set_trans(Tween.TRANS_BACK).set_delay(1.25)
 	tween.parallel().tween_property($Control/exit, "scale", Vector2(1,1), .55).set_trans(Tween.TRANS_BACK).set_delay(1.25)
 	
-	draw_line(Vector2(-576, -350),Vector2(0, -100),Vector2(576, -350))
+	#draw_line(Vector2(-576, -350),Vector2(0, -100),Vector2(576, -350))
 
 func _on_button_pressed() -> void:
 	SceneTransition.changeSceneUI(WORLD_TEST)

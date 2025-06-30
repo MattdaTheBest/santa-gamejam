@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bh4n5as350gf5"]
+[gd_scene load_steps=7 format=3 uid="uid://bh4n5as350gf5"]
 
 [ext_resource type="Script" path="res://light.gd" id="1_chp5u"]
 [ext_resource type="Texture2D" uid="uid://b28w0v1n85wo4" path="res://sprites/UI/light.png" id="1_yv2i4"]
 [ext_resource type="Texture2D" uid="uid://cmxo0st3g4ws7" path="res://sprites/UI/lighttop.png" id="2_yfkpb"]
 [ext_resource type="Texture2D" uid="uid://d0edclktvdofr" path="res://sprites/UI/lightend.png" id="3_08uxk"]
+
+[sub_resource type="Gradient" id="Gradient_n6gns"]
+offsets = PackedFloat32Array(0, 0.121864)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0355402)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b0l62"]
+gradient = SubResource("Gradient_n6gns")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.478632, 0.504274)
 
 [node name="LIGHT" type="Node2D"]
 z_index = 1000
@@ -20,5 +31,11 @@ position = Vector2(0, 3.5)
 texture = ExtResource("2_yfkpb")
 
 [node name="bulb" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
 position = Vector2(0, 11.5)
 texture = ExtResource("3_08uxk")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 12)
+energy = 16.0
+texture = SubResource("GradientTexture2D_b0l62")

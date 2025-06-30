@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6rslqwrroi4x"]
+
+[ext_resource type="Texture2D" uid="uid://bim4snjvsthws" path="res://sprites/Tiles/Tile Pieces/lampPost.png" id="1_7rmcm"]
+[ext_resource type="Script" path="res://lamp_post.gd" id="1_whac7"]
+[ext_resource type="Texture2D" uid="uid://bge0h8i3crr6y" path="res://sprites/Tiles/ExtraTileMap.png" id="2_3orey"]
+[ext_resource type="Texture2D" uid="uid://bsqdgpm7bpbsj" path="res://sprites/Tiles/Tile Pieces/banner.png" id="3_2a3vb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jetup"]
+radius = 3.0
+height = 10.0
+
+[node name="LampPost" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_whac7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(0, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 20)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jetup")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_7rmcm")
+offset = Vector2(0, -24)
+
+[node name="reef" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(0, -30)
+texture = ExtResource("2_3orey")
+region_enabled = true
+region_rect = Rect2(36, 36, 8, 9)
+
+[node name="leftflag" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-5, -23)
+texture = ExtResource("3_2a3vb")
+
+[node name="rightflag" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(5, -23)
+texture = ExtResource("3_2a3vb")
+flip_h = true
